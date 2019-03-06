@@ -5,6 +5,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
@@ -22,6 +24,8 @@ public class User implements Serializable {
 
     private String email;
 
+    private Boolean active;
+
     @JsonIgnore
     @OneToOne(fetch = FetchType.LAZY,
             cascade =  CascadeType.ALL,
@@ -29,10 +33,26 @@ public class User implements Serializable {
     private Biker biker;
 
     @JsonIgnore
+    @OneToOne(fetch = FetchType.EAGER,
+            cascade =  CascadeType.ALL,
+            mappedBy = "user")
+    private BikePark bikePark;
+
+    @JsonIgnore
     @OneToOne(fetch = FetchType.LAZY,
             cascade =  CascadeType.ALL,
             mappedBy = "user")
     private Administrator administrator;
+
+    @ManyToMany(
+            cascade = CascadeType.DETACH,
+            fetch = FetchType.EAGER
+    )
+    @JoinTable(name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Set<Role> roles = new HashSet<>();
 
     public Biker getBiker() {
         return biker;
@@ -84,6 +104,32 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
+    public BikePark getBikePark() {
+        return bikePark;
+    }
+
+    public User setBikePark(BikePark bikePark) {
+        this.bikePark = bikePark;
+        bikePark.setUser(this);
+        return this;
     }
 
     @Override

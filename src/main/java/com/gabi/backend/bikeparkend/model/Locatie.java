@@ -22,9 +22,16 @@ public class Locatie implements Serializable {
 
     private String strada;
 
+    private String number;
+
+    private String codPostal;
+
     private String coordonate;
 
-    @JsonIgnore
+    private Double latitude;
+    private Double longitude;
+
+    /*@JsonIgnore
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "biker_id")
     private Biker biker;
@@ -32,7 +39,12 @@ public class Locatie implements Serializable {
     @JsonIgnore
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "bikepark_id")
-    private BikePark bikePark;
+    private BikePark bikePark;*/
+
+    @JsonIgnore
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "contact_id", nullable = false)
+    private Contact contact;
 
     public long getId() {
         return id;
@@ -74,6 +86,22 @@ public class Locatie implements Serializable {
         this.strada = strada;
     }
 
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getCodPostal() {
+        return codPostal;
+    }
+
+    public void setCodPostal(String codPostal) {
+        this.codPostal = codPostal;
+    }
+
     public String getCoordonate() {
         return coordonate;
     }
@@ -82,20 +110,28 @@ public class Locatie implements Serializable {
         this.coordonate = coordonate;
     }
 
-    public Biker getBiker() {
-        return biker;
+    public Double getLatitude() {
+        return latitude;
     }
 
-    public void setBiker(Biker biker) {
-        this.biker = biker;
+    public void setLatitude(Double latitude) {
+        this.latitude = latitude;
     }
 
-    public BikePark getBikePark() {
-        return bikePark;
+    public Double getLongitude() {
+        return longitude;
     }
 
-    public void setBikePark(BikePark bikePark) {
-        this.bikePark = bikePark;
+    public void setLongitude(Double longitude) {
+        this.longitude = longitude;
+    }
+
+    public Contact getContact() {
+        return contact;
+    }
+
+    public void setContact(Contact contact) {
+        this.contact = contact;
     }
 
     @Override
@@ -106,9 +142,12 @@ public class Locatie implements Serializable {
                 ", provincie='" + provincie + '\'' +
                 ", localitate='" + localitate + '\'' +
                 ", strada='" + strada + '\'' +
+                ", number='" + number + '\'' +
+                ", codPostal='" + codPostal + '\'' +
                 ", coordonate='" + coordonate + '\'' +
-                ", biker=" + biker +
-                ", bikePark=" + bikePark +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", contact=" + contact +
                 '}';
     }
 

@@ -27,9 +27,9 @@ public class Biker implements Serializable {
 
     private Integer aniExperienta;
 
-    @OneToOne(mappedBy = "biker", cascade = CascadeType.DETACH,
+    /*@OneToOne(mappedBy = "biker", cascade = CascadeType.DETACH,
             fetch = FetchType.LAZY, optional = true)
-    private Locatie locatie;
+    private Locatie locatie;*/
 
     @JsonIgnore
     @OneToMany(
@@ -48,6 +48,10 @@ public class Biker implements Serializable {
             fetch = FetchType.EAGER
     )
     private Set<RezervareConcurs> rezervareConcurs = new HashSet<>();
+
+    @OneToOne(mappedBy = "biker", cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY, optional = true)
+    private Contact contact;
 
     private LocalDate dataNasterii;
 
@@ -73,14 +77,23 @@ public class Biker implements Serializable {
         this.aniExperienta = aniExperienta;
     }
 
-    public Locatie getLocatie() {
+    public Contact getContact() {
+        return contact;
+    }
+
+    public void setContact(Contact contact) {
+        this.contact = contact;
+        contact.setBiker(this);
+    }
+
+    /*public Locatie getLocatie() {
         return locatie;
     }
 
     public void setLocatie(Locatie locatie) {
         this.locatie = locatie;
         locatie.setBiker(this);
-    }
+    }*/
 
     public LocalDate getDataNasterii() {
         return dataNasterii;
@@ -166,7 +179,7 @@ public class Biker implements Serializable {
                 ", nume='" + nume + '\'' +
                 ", prenume='" + prenume + '\'' +
                 ", aniExperienta=" + aniExperienta +
-                ", locatie=" + locatie +
+                //", locatie=" + locatie +
                 ", rezervareBikeParks=" + rezervareBikeParks +
                 ", rezervareConcurs=" + rezervareConcurs +
                 ", dataNasterii=" + dataNasterii +

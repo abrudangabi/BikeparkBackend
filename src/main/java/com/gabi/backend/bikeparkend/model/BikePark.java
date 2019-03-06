@@ -16,17 +16,23 @@ public class BikePark implements Serializable {
     @Column(name = "bikepark_id")
     private Long id;
 
+    @OneToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
     private String denumire;
 
     private Boolean telescaun;
 
-    private Integer nrLocuriDisponibile;
+    private Integer nrLocuri;
 
-    @OneToOne(mappedBy = "bikePark", cascade = CascadeType.DETACH,
+    private String descriere;
+
+    //TODO - TREBUIE LA MAPARE bikePark LA DATABASE
+
+    /*@OneToOne(mappedBy = "bikePark", cascade = CascadeType.DETACH,
             fetch = FetchType.LAZY, optional = true)
-    private Locatie locatie;
-
-
+    private Locatie locatie;*/
 
     @JsonIgnore
     @OneToMany(
@@ -41,6 +47,10 @@ public class BikePark implements Serializable {
         this.rezervareBikeParks.add(rezervareBikeParks);
         rezervareBikeParks.setBikePark(this);
     }
+
+    @OneToOne(mappedBy = "bikePark", cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER, optional = true)
+    private Contact contact;
 
     @JsonIgnore
     @OneToMany(
@@ -86,21 +96,21 @@ public class BikePark implements Serializable {
         this.denumire = denumire;
     }
 
-    public Locatie getLocatie() {
+    /*public Locatie getLocatie() {
         return locatie;
     }
 
     public void setLocatie(Locatie locatie) {
         this.locatie = locatie;
         locatie.setBikePark(this);
+    }*/
+
+    public Integer getNrLocuri() {
+        return nrLocuri;
     }
 
-    public Integer getNrLocuriDisponibile() {
-        return nrLocuriDisponibile;
-    }
-
-    public void setNrLocuriDisponibile(Integer nrLocuriDisponibile) {
-        this.nrLocuriDisponibile = nrLocuriDisponibile;
+    public void setNrLocuri(Integer nrLocuriDisponibile) {
+        this.nrLocuri = nrLocuriDisponibile;
     }
 
     @JsonIgnore
@@ -134,17 +144,57 @@ public class BikePark implements Serializable {
         return telescaun;
     }
 
+    public Contact getContact() {
+        return contact;
+    }
+
+    public void setContact(Contact contact) {
+        this.contact = contact;
+        contact.setBikePark(this);
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public String getDescriere() {
+        return descriere;
+    }
+
+    public void setDescriere(String descriere) {
+        this.descriere = descriere;
+    }
+
+    /*@Override
+    public String toString() {
+        return "BikePark{" +
+                "id=" + id +
+                ", denumire='" + denumire + '\'' +
+                //", locatie=" + locatie +
+                ", nrLocuriDisponibile=" + nrLocuri +
+                ", rezervareBikeParks=" + rezervareBikeParks +
+                ", trasee=" + trasee +
+                ", concurs=" + concurs +
+                ", telescaun=" + telescaun +
+                '}';
+    }*/
+
     @Override
     public String toString() {
         return "BikePark{" +
                 "id=" + id +
                 ", denumire='" + denumire + '\'' +
-                ", locatie=" + locatie +
-                ", nrLocuriDisponibile=" + nrLocuriDisponibile +
+                ", telescaun=" + telescaun +
+                ", nrLocuri=" + nrLocuri +
+                ", descriere='" + descriere + '\'' +
                 ", rezervareBikeParks=" + rezervareBikeParks +
+                ", contact=" + contact +
                 ", trasee=" + trasee +
                 ", concurs=" + concurs +
-                ", telescaun=" + telescaun +
                 '}';
     }
 
