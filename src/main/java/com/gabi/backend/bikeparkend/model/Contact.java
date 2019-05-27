@@ -101,4 +101,14 @@ public class Contact implements Serializable {
         this.photo = photo;
         photo.setContact(this);
     }
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "id=" + id +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", facebookLink='" + facebookLink + '\'' +
+                ", website='" + website + '\'' +
+                '}';
+    }
 }

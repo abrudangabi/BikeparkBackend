@@ -44,4 +44,30 @@ public interface GenericService {
     Traseu addTraseu(Traseu traseu);
 
     Role addRole(Role role);
+
+    List<Categorie> getCategoriiByConcurs(Long idConcurs);
+
+    BikePark getBikeparkByConcurs(Long idConcurs);
+
+    Concurs getConcursById(Long idConcurs);
+
+    Photo getConcursLogo(Long idConcurs);
+
+    Categorie deleteCategorie(Long id);
+
+    Traseu deleteTraseu(Long id);
+
+    RezervareConcurs createRezervareConcurs(Concurs concurs, RezervareConcurs rezervareConcurs);
+
+    Categorie createCategorie(Concurs concurs, Categorie categorie);
+
+    Traseu createTraseu(BikePark bikePark, Traseu traseu) throws NotValidBikeparkException;
+
+    RezervareBikePark createRezervareBikepark(BikePark bikePark, RezervareBikePark rezervareBikePark) throws NotValidBikeparkException;
+
+    BikePark updateBikepark(Long id, BikePark bikePark) throws NotValidBikeparkException;
+
+    Contact updateBikeparkContact(Long id, Contact contact);
+
+    List<Traseu> findTraseeByBikeparkId(Long id);
 }

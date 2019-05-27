@@ -1,6 +1,7 @@
 package com.gabi.backend.bikeparkend.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,6 +11,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "concurs")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Concurs implements Serializable {
 
     @Id
@@ -119,6 +121,10 @@ public class Concurs implements Serializable {
 
     public Set<RezervareConcurs> getRezervareConcurs() {
         return rezervareConcurs;
+    }
+
+    public void removeCategorie(Categorie categorie){
+        this.categorii.remove(categorie);
     }
 
 

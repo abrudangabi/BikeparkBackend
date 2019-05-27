@@ -24,6 +24,26 @@ public class RezervareConcurs implements Serializable {
     @JsonIgnore
     private Biker biker;
 
+    private Long numar;
+
+    private String categorie;
+
+    public Long getNumar() {
+        return numar;
+    }
+
+    public void setNumar(Long numar) {
+        this.numar = numar;
+    }
+
+    public String getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
+    }
+
     public Long getId() {
         return id;
     }
@@ -46,5 +66,14 @@ public class RezervareConcurs implements Serializable {
 
     public void setBiker(Biker biker) {
         this.biker = biker;
+    }
+
+    @Override
+    public String toString() {
+        return "RezervareConcurs{" +
+                "id=" + id +
+                ", numar=" + numar +
+                ", categorie='" + categorie + '\'' +
+                '}';
     }
 }

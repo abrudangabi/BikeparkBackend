@@ -13,6 +13,10 @@
 import * as models from './models';
 
 export interface RezervareConcurs {
+    categorie?: string;
+
     id?: number;
+
+    numar?: number;
 
 }

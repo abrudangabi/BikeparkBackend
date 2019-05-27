@@ -161,6 +161,10 @@ public class BikePark implements Serializable {
         this.user = user;
     }
 
+    public void removeTraseu(Traseu traseu){
+        this.trasee.remove(traseu);
+    }
+
     public String getDescriere() {
         return descriere;
     }
@@ -187,14 +191,15 @@ public class BikePark implements Serializable {
     public String toString() {
         return "BikePark{" +
                 "id=" + id +
+                //", user=" + user +
                 ", denumire='" + denumire + '\'' +
                 ", telescaun=" + telescaun +
                 ", nrLocuri=" + nrLocuri +
                 ", descriere='" + descriere + '\'' +
                 ", rezervareBikeParks=" + rezervareBikeParks +
                 ", contact=" + contact +
-                ", trasee=" + trasee +
-                ", concurs=" + concurs +
+                //", trasee=" + trasee +
+                //", concurs=" + concurs +
                 '}';
     }
 

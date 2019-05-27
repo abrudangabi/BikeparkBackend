@@ -1,5 +1,8 @@
 package com.gabi.backend.bikeparkend.controller;
 
+import com.gabi.backend.bikeparkend.controller.requests.CreateCategorieConcurs;
+import com.gabi.backend.bikeparkend.controller.requests.CreateRezervareBikepark;
+import com.gabi.backend.bikeparkend.controller.requests.CreateTraseuBikepark;
 import com.gabi.backend.bikeparkend.exceptions.NotValidBikeparkException;
 import com.gabi.backend.bikeparkend.model.*;
 import com.gabi.backend.bikeparkend.service.GenericService;
@@ -8,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Api("BikeParkController")
 @SuppressWarnings("unchecked")
@@ -50,17 +55,17 @@ public class BikeParkController {
         return new ResponseEntity(userService.getAllRezervareBikePark(), HttpStatus.OK);
     }
 
-    @GetMapping("/all/categorii")
+    /*@GetMapping("/all/categorii")
     public @ResponseBody
     ResponseEntity getAllCategorii(){
         return new ResponseEntity(userService.getAllCategorii(), HttpStatus.OK);
-    }
+    }*/
 
-    @GetMapping("/all/concurs")
+    /*@GetMapping("/all/concurs")
     public @ResponseBody
     ResponseEntity getAllConcurs(){
         return new ResponseEntity(userService.getAllConcurs(), HttpStatus.OK);
-    }
+    }*/
 
     @GetMapping("/all/rezervareconcurs")
     public @ResponseBody
@@ -75,11 +80,11 @@ public class BikeParkController {
     }
 
     @GetMapping("/all/photos")
-    ResponseEntity getAllPhotos(){
+    public ResponseEntity getAllPhotos(){
         return new ResponseEntity(userService.getAllPhotos(), HttpStatus.OK);
     }
 
-    @GetMapping("/bikepark/details/{id}")
+    @GetMapping("/details/{id}")
     public ResponseEntity getBikeparkById(@PathVariable Long id) throws NotValidBikeparkException {
         BikePark bikePark = userService.getBikeparkById(id);
         return new ResponseEntity(bikePark, HttpStatus.OK);
@@ -92,14 +97,23 @@ public class BikeParkController {
     }
 
     @PostMapping("/rezervarebikepark/rezerva")
-    public @ResponseBody ResponseEntity addRezervareBikepark(@RequestBody RezervareBikePark rezervareBikePark){
-        return new ResponseEntity(userService.rezervaBikepark(rezervareBikePark), HttpStatus.OK);
+    public @ResponseBody ResponseEntity addRezervareBikepark(@RequestBody CreateRezervareBikepark createRezervareBikepark) throws NotValidBikeparkException{
+        System.out.println(createRezervareBikepark.getRezervareBikePark().getZiua());
+        RezervareBikePark rezervareBikePark =
+                userService.createRezervareBikepark(
+                        createRezervareBikepark.getBikePark(),
+                        createRezervareBikepark.getRezervareBikePark()
+                );
+        if (rezervareBikePark==null)
+            return new ResponseEntity(HttpStatus.CONFLICT);
+        return new ResponseEntity(rezervareBikePark,HttpStatus.CREATED);
+        //return new ResponseEntity(userService.rezervaBikepark(rezervareBikePark), HttpStatus.OK);
     }
 
-    @PostMapping("/rezervareconcurs/rezerva")
+    /*@PostMapping("/rezervareconcurs/rezerva")
     public @ResponseBody ResponseEntity addRezervareConcurs(@RequestBody RezervareConcurs rezervareConcurs){
         return new ResponseEntity(userService.rezervaConcurs(rezervareConcurs), HttpStatus.OK);
-    }
+    }*/
 
     @PostMapping("/add/concurs")
     public @ResponseBody ResponseEntity addConcurs(@RequestBody Concurs concurs){
@@ -116,13 +130,55 @@ public class BikeParkController {
         return new ResponseEntity(userService.addCategorie(categorie), HttpStatus.OK);
     }
 
-    @PostMapping("/add/traseu")
+    /*@PostMapping("/add/traseu")
     public @ResponseBody ResponseEntity addTraseu(@RequestBody Traseu traseu){
         return new ResponseEntity(userService.addTraseu(traseu), HttpStatus.OK);
-    }
+    }*/
 
     @PostMapping("/add/role")
     public @ResponseBody ResponseEntity addRole(@RequestBody Role role){
         return new ResponseEntity(userService.addRole(role), HttpStatus.OK);
+    }
+
+    @PutMapping("/edit/{id}")
+    public @ResponseBody
+    ResponseEntity updateBikepark(@PathVariable Long id, @RequestBody BikePark bikePark) throws NotValidBikeparkException {
+        System.out.println("Face edit in Bikepark");
+        return new ResponseEntity(userService.updateBikepark(id,bikePark), HttpStatus.OK);
+    }
+
+    @PutMapping("/edit/contact/{id}")
+    public @ResponseBody
+    ResponseEntity updateBikeparkContact(@PathVariable Long id, @RequestBody Contact contact) {
+        System.out.println("Face edit in contacte la Bikepark");
+        return new ResponseEntity(userService.updateBikeparkContact(id,contact), HttpStatus.OK);
+    }
+
+    @GetMapping("/traseu/{id}")
+    public ResponseEntity getTraseeByBikepark(@PathVariable Long id) {
+        System.out.println("Cheama traseele");
+        List<Traseu> traseuList = userService.findTraseeByBikeparkId(id);
+                // userService.getAllTrasee();//userService.findTraseeByBikeparkId(id);
+        System.out.println("Cate sunt : " + traseuList.size());
+        return new ResponseEntity(traseuList, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/traseu/delete/{id}")
+    public ResponseEntity deleteTraseu(@PathVariable Long id) {
+        System.out.println("Sterge traseul : " + id);
+        return new ResponseEntity(userService.deleteTraseu(id),HttpStatus.OK);
+    }
+
+    @PostMapping("/add/traseu")
+    public @ResponseBody ResponseEntity addTraseu(@RequestBody CreateTraseuBikepark createTraseuBikepark) throws NotValidBikeparkException{
+        Traseu traseu =
+                userService.createTraseu(
+                        createTraseuBikepark.getBikePark(),
+                        createTraseuBikepark.getTraseu()
+                );
+        if (traseu==null)
+            return new ResponseEntity(HttpStatus.CONFLICT);
+        return new ResponseEntity(traseu,HttpStatus.CREATED);
+        //return new ResponseEntity(userService.addCategorie(categorie), HttpStatus.OK);
     }
 }

@@ -74,4 +74,15 @@ public class Photo implements Serializable {
     public void setDeleted(boolean deleted) {
         this.deleted = deleted;
     }
+
+    @Override
+    public String toString() {
+        return "Photo{" +
+                "id=" + id +
+                ", url='" + url + '\'' +
+                ", public_id='" + public_id + '\'' +
+                ", path='" + path + '\'' +
+                ", deleted=" + deleted +
+                '}';
+    }
 }
