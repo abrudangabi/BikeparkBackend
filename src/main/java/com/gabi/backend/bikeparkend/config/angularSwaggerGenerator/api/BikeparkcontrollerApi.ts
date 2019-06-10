@@ -92,26 +92,10 @@ export class BikeparkcontrollerApi {
     /**
      * 
      * @summary addRezervareBikepark
-     * @param rezervareBikePark rezervareBikePark
+     * @param createRezervareBikepark createRezervareBikepark
      */
-    public addRezervareBikeparkUsingPOST(rezervareBikePark: models.RezervareBikePark, extraHttpRequestParams?: any): Observable<models.ResponseEntity> {
-        return this.addRezervareBikeparkUsingPOSTWithHttpInfo(rezervareBikePark, extraHttpRequestParams)
-            .map((response: Response) => {
-                if (response.status === 204) {
-                    return undefined;
-                } else {
-                    return response.json() || {};
-                }
-            });
-    }
-
-    /**
-     * 
-     * @summary addRezervareConcurs
-     * @param rezervareConcurs rezervareConcurs
-     */
-    public addRezervareConcursUsingPOST(rezervareConcurs: models.RezervareConcurs, extraHttpRequestParams?: any): Observable<models.ResponseEntity> {
-        return this.addRezervareConcursUsingPOSTWithHttpInfo(rezervareConcurs, extraHttpRequestParams)
+    public addRezervareBikeparkUsingPOST(createRezervareBikepark: models.CreateRezervareBikepark, extraHttpRequestParams?: any): Observable<models.ResponseEntity> {
+        return this.addRezervareBikeparkUsingPOSTWithHttpInfo(createRezervareBikepark, extraHttpRequestParams)
             .map((response: Response) => {
                 if (response.status === 204) {
                     return undefined;
@@ -140,10 +124,26 @@ export class BikeparkcontrollerApi {
     /**
      * 
      * @summary addTraseu
-     * @param traseu traseu
+     * @param createTraseuBikepark createTraseuBikepark
      */
-    public addTraseuUsingPOST(traseu: models.Traseu, extraHttpRequestParams?: any): Observable<models.ResponseEntity> {
-        return this.addTraseuUsingPOSTWithHttpInfo(traseu, extraHttpRequestParams)
+    public addTraseuUsingPOST(createTraseuBikepark: models.CreateTraseuBikepark, extraHttpRequestParams?: any): Observable<models.ResponseEntity> {
+        return this.addTraseuUsingPOSTWithHttpInfo(createTraseuBikepark, extraHttpRequestParams)
+            .map((response: Response) => {
+                if (response.status === 204) {
+                    return undefined;
+                } else {
+                    return response.json() || {};
+                }
+            });
+    }
+
+    /**
+     * 
+     * @summary deleteTraseu
+     * @param id id
+     */
+    public deleteTraseuUsingDELETE(id: number, extraHttpRequestParams?: any): Observable<models.ResponseEntity> {
+        return this.deleteTraseuUsingDELETEWithHttpInfo(id, extraHttpRequestParams)
             .map((response: Response) => {
                 if (response.status === 204) {
                     return undefined;
@@ -174,36 +174,6 @@ export class BikeparkcontrollerApi {
      */
     public getAllBikersUsingGET(extraHttpRequestParams?: any): Observable<models.ResponseEntity> {
         return this.getAllBikersUsingGETWithHttpInfo(extraHttpRequestParams)
-            .map((response: Response) => {
-                if (response.status === 204) {
-                    return undefined;
-                } else {
-                    return response.json() || {};
-                }
-            });
-    }
-
-    /**
-     * 
-     * @summary getAllCategorii
-     */
-    public getAllCategoriiUsingGET(extraHttpRequestParams?: any): Observable<models.ResponseEntity> {
-        return this.getAllCategoriiUsingGETWithHttpInfo(extraHttpRequestParams)
-            .map((response: Response) => {
-                if (response.status === 204) {
-                    return undefined;
-                } else {
-                    return response.json() || {};
-                }
-            });
-    }
-
-    /**
-     * 
-     * @summary getAllConcurs
-     */
-    public getAllConcursUsingGET(extraHttpRequestParams?: any): Observable<models.ResponseEntity> {
-        return this.getAllConcursUsingGETWithHttpInfo(extraHttpRequestParams)
             .map((response: Response) => {
                 if (response.status === 204) {
                     return undefined;
@@ -321,12 +291,78 @@ export class BikeparkcontrollerApi {
 
     /**
      * 
+     * @summary getTraseeByBikepark
+     * @param id id
+     */
+    public getTraseeByBikeparkUsingGET(id: number, extraHttpRequestParams?: any): Observable<models.ResponseEntity> {
+        return this.getTraseeByBikeparkUsingGETWithHttpInfo(id, extraHttpRequestParams)
+            .map((response: Response) => {
+                if (response.status === 204) {
+                    return undefined;
+                } else {
+                    return response.json() || {};
+                }
+            });
+    }
+
+    /**
+     * 
+     * @summary recommend
+     * @param userId userId
+     */
+    public recommendUsingGET(userId: number, extraHttpRequestParams?: any): Observable<models.ResponseEntity> {
+        return this.recommendUsingGETWithHttpInfo(userId, extraHttpRequestParams)
+            .map((response: Response) => {
+                if (response.status === 204) {
+                    return undefined;
+                } else {
+                    return response.json() || {};
+                }
+            });
+    }
+
+    /**
+     * 
      * @summary updateApplicant
      * @param id id
      * @param applicant applicant
      */
     public updateApplicantUsingPUT(id: number, applicant: models.Biker, extraHttpRequestParams?: any): Observable<models.ResponseEntity> {
         return this.updateApplicantUsingPUTWithHttpInfo(id, applicant, extraHttpRequestParams)
+            .map((response: Response) => {
+                if (response.status === 204) {
+                    return undefined;
+                } else {
+                    return response.json() || {};
+                }
+            });
+    }
+
+    /**
+     * 
+     * @summary updateBikeparkContact
+     * @param id id
+     * @param contact contact
+     */
+    public updateBikeparkContactUsingPUT(id: number, contact: models.Contact, extraHttpRequestParams?: any): Observable<models.ResponseEntity> {
+        return this.updateBikeparkContactUsingPUTWithHttpInfo(id, contact, extraHttpRequestParams)
+            .map((response: Response) => {
+                if (response.status === 204) {
+                    return undefined;
+                } else {
+                    return response.json() || {};
+                }
+            });
+    }
+
+    /**
+     * 
+     * @summary updateBikepark
+     * @param id id
+     * @param bikePark bikePark
+     */
+    public updateBikeparkUsingPUT(id: number, bikePark: models.BikePark, extraHttpRequestParams?: any): Observable<models.ResponseEntity> {
+        return this.updateBikeparkUsingPUTWithHttpInfo(id, bikePark, extraHttpRequestParams)
             .map((response: Response) => {
                 if (response.status === 204) {
                     return undefined;
@@ -463,16 +499,16 @@ export class BikeparkcontrollerApi {
     /**
      * addRezervareBikepark
      * 
-     * @param rezervareBikePark rezervareBikePark
+     * @param createRezervareBikepark createRezervareBikepark
      */
-    public addRezervareBikeparkUsingPOSTWithHttpInfo(rezervareBikePark: models.RezervareBikePark, extraHttpRequestParams?: any): Observable<Response> {
+    public addRezervareBikeparkUsingPOSTWithHttpInfo(createRezervareBikepark: models.CreateRezervareBikepark, extraHttpRequestParams?: any): Observable<Response> {
         const path = this.basePath + '/api/bikepark/rezervarebikepark/rezerva';
 
         let queryParameters = new URLSearchParams();
         let headers = new Headers(this.defaultHeaders.toJSON()); // https://github.com/angular/angular/issues/6845
-        // verify required parameter 'rezervareBikePark' is not null or undefined
-        if (rezervareBikePark === null || rezervareBikePark === undefined) {
-            throw new Error('Required parameter rezervareBikePark was null or undefined when calling addRezervareBikeparkUsingPOST.');
+        // verify required parameter 'createRezervareBikepark' is not null or undefined
+        if (createRezervareBikepark === null || createRezervareBikepark === undefined) {
+            throw new Error('Required parameter createRezervareBikepark was null or undefined when calling addRezervareBikeparkUsingPOST.');
         }
         // to determine the Content-Type header
         let consumes: string[] = [
@@ -489,48 +525,7 @@ export class BikeparkcontrollerApi {
         let requestOptions: RequestOptionsArgs = new RequestOptions({
             method: RequestMethod.Post,
             headers: headers,
-            body: rezervareBikePark == null ? '' : JSON.stringify(rezervareBikePark), // https://github.com/angular/angular/issues/10612
-            search: queryParameters,
-            withCredentials:this.configuration.withCredentials
-        });
-        // https://github.com/swagger-api/swagger-codegen/issues/4037
-        if (extraHttpRequestParams) {
-            requestOptions = (<any>Object).assign(requestOptions, extraHttpRequestParams);
-        }
-
-        return this.http.request(path, requestOptions);
-    }
-
-    /**
-     * addRezervareConcurs
-     * 
-     * @param rezervareConcurs rezervareConcurs
-     */
-    public addRezervareConcursUsingPOSTWithHttpInfo(rezervareConcurs: models.RezervareConcurs, extraHttpRequestParams?: any): Observable<Response> {
-        const path = this.basePath + '/api/bikepark/rezervareconcurs/rezerva';
-
-        let queryParameters = new URLSearchParams();
-        let headers = new Headers(this.defaultHeaders.toJSON()); // https://github.com/angular/angular/issues/6845
-        // verify required parameter 'rezervareConcurs' is not null or undefined
-        if (rezervareConcurs === null || rezervareConcurs === undefined) {
-            throw new Error('Required parameter rezervareConcurs was null or undefined when calling addRezervareConcursUsingPOST.');
-        }
-        // to determine the Content-Type header
-        let consumes: string[] = [
-            'application/json'
-        ];
-
-        // to determine the Accept header
-        let produces: string[] = [
-            '*/*'
-        ];
-
-        headers.set('Content-Type', 'application/json');
-
-        let requestOptions: RequestOptionsArgs = new RequestOptions({
-            method: RequestMethod.Post,
-            headers: headers,
-            body: rezervareConcurs == null ? '' : JSON.stringify(rezervareConcurs), // https://github.com/angular/angular/issues/10612
+            body: createRezervareBikepark == null ? '' : JSON.stringify(createRezervareBikepark), // https://github.com/angular/angular/issues/10612
             search: queryParameters,
             withCredentials:this.configuration.withCredentials
         });
@@ -586,16 +581,16 @@ export class BikeparkcontrollerApi {
     /**
      * addTraseu
      * 
-     * @param traseu traseu
+     * @param createTraseuBikepark createTraseuBikepark
      */
-    public addTraseuUsingPOSTWithHttpInfo(traseu: models.Traseu, extraHttpRequestParams?: any): Observable<Response> {
+    public addTraseuUsingPOSTWithHttpInfo(createTraseuBikepark: models.CreateTraseuBikepark, extraHttpRequestParams?: any): Observable<Response> {
         const path = this.basePath + '/api/bikepark/add/traseu';
 
         let queryParameters = new URLSearchParams();
         let headers = new Headers(this.defaultHeaders.toJSON()); // https://github.com/angular/angular/issues/6845
-        // verify required parameter 'traseu' is not null or undefined
-        if (traseu === null || traseu === undefined) {
-            throw new Error('Required parameter traseu was null or undefined when calling addTraseuUsingPOST.');
+        // verify required parameter 'createTraseuBikepark' is not null or undefined
+        if (createTraseuBikepark === null || createTraseuBikepark === undefined) {
+            throw new Error('Required parameter createTraseuBikepark was null or undefined when calling addTraseuUsingPOST.');
         }
         // to determine the Content-Type header
         let consumes: string[] = [
@@ -612,7 +607,46 @@ export class BikeparkcontrollerApi {
         let requestOptions: RequestOptionsArgs = new RequestOptions({
             method: RequestMethod.Post,
             headers: headers,
-            body: traseu == null ? '' : JSON.stringify(traseu), // https://github.com/angular/angular/issues/10612
+            body: createTraseuBikepark == null ? '' : JSON.stringify(createTraseuBikepark), // https://github.com/angular/angular/issues/10612
+            search: queryParameters,
+            withCredentials:this.configuration.withCredentials
+        });
+        // https://github.com/swagger-api/swagger-codegen/issues/4037
+        if (extraHttpRequestParams) {
+            requestOptions = (<any>Object).assign(requestOptions, extraHttpRequestParams);
+        }
+
+        return this.http.request(path, requestOptions);
+    }
+
+    /**
+     * deleteTraseu
+     * 
+     * @param id id
+     */
+    public deleteTraseuUsingDELETEWithHttpInfo(id: number, extraHttpRequestParams?: any): Observable<Response> {
+        const path = this.basePath + '/api/bikepark/traseu/delete/${id}'
+                    .replace('${' + 'id' + '}', String(id));
+
+        let queryParameters = new URLSearchParams();
+        let headers = new Headers(this.defaultHeaders.toJSON()); // https://github.com/angular/angular/issues/6845
+        // verify required parameter 'id' is not null or undefined
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling deleteTraseuUsingDELETE.');
+        }
+        // to determine the Content-Type header
+        let consumes: string[] = [
+            'application/json'
+        ];
+
+        // to determine the Accept header
+        let produces: string[] = [
+            '*/*'
+        ];
+
+        let requestOptions: RequestOptionsArgs = new RequestOptions({
+            method: RequestMethod.Delete,
+            headers: headers,
             search: queryParameters,
             withCredentials:this.configuration.withCredentials
         });
@@ -663,72 +697,6 @@ export class BikeparkcontrollerApi {
      */
     public getAllBikersUsingGETWithHttpInfo(extraHttpRequestParams?: any): Observable<Response> {
         const path = this.basePath + '/api/bikepark/all/bikers';
-
-        let queryParameters = new URLSearchParams();
-        let headers = new Headers(this.defaultHeaders.toJSON()); // https://github.com/angular/angular/issues/6845
-        // to determine the Content-Type header
-        let consumes: string[] = [
-            'application/json'
-        ];
-
-        // to determine the Accept header
-        let produces: string[] = [
-            '*/*'
-        ];
-
-        let requestOptions: RequestOptionsArgs = new RequestOptions({
-            method: RequestMethod.Get,
-            headers: headers,
-            search: queryParameters,
-            withCredentials:this.configuration.withCredentials
-        });
-        // https://github.com/swagger-api/swagger-codegen/issues/4037
-        if (extraHttpRequestParams) {
-            requestOptions = (<any>Object).assign(requestOptions, extraHttpRequestParams);
-        }
-
-        return this.http.request(path, requestOptions);
-    }
-
-    /**
-     * getAllCategorii
-     * 
-     */
-    public getAllCategoriiUsingGETWithHttpInfo(extraHttpRequestParams?: any): Observable<Response> {
-        const path = this.basePath + '/api/bikepark/all/categorii';
-
-        let queryParameters = new URLSearchParams();
-        let headers = new Headers(this.defaultHeaders.toJSON()); // https://github.com/angular/angular/issues/6845
-        // to determine the Content-Type header
-        let consumes: string[] = [
-            'application/json'
-        ];
-
-        // to determine the Accept header
-        let produces: string[] = [
-            '*/*'
-        ];
-
-        let requestOptions: RequestOptionsArgs = new RequestOptions({
-            method: RequestMethod.Get,
-            headers: headers,
-            search: queryParameters,
-            withCredentials:this.configuration.withCredentials
-        });
-        // https://github.com/swagger-api/swagger-codegen/issues/4037
-        if (extraHttpRequestParams) {
-            requestOptions = (<any>Object).assign(requestOptions, extraHttpRequestParams);
-        }
-
-        return this.http.request(path, requestOptions);
-    }
-
-    /**
-     * getAllConcurs
-     * 
-     */
-    public getAllConcursUsingGETWithHttpInfo(extraHttpRequestParams?: any): Observable<Response> {
-        const path = this.basePath + '/api/bikepark/all/concurs';
 
         let queryParameters = new URLSearchParams();
         let headers = new Headers(this.defaultHeaders.toJSON()); // https://github.com/angular/angular/issues/6845
@@ -960,7 +928,7 @@ export class BikeparkcontrollerApi {
      * @param id id
      */
     public getBikeparkByIdUsingGETWithHttpInfo(id: number, extraHttpRequestParams?: any): Observable<Response> {
-        const path = this.basePath + '/api/bikepark/bikepark/details/${id}'
+        const path = this.basePath + '/api/bikepark/details/${id}'
                     .replace('${' + 'id' + '}', String(id));
 
         let queryParameters = new URLSearchParams();
@@ -968,6 +936,84 @@ export class BikeparkcontrollerApi {
         // verify required parameter 'id' is not null or undefined
         if (id === null || id === undefined) {
             throw new Error('Required parameter id was null or undefined when calling getBikeparkByIdUsingGET.');
+        }
+        // to determine the Content-Type header
+        let consumes: string[] = [
+            'application/json'
+        ];
+
+        // to determine the Accept header
+        let produces: string[] = [
+            '*/*'
+        ];
+
+        let requestOptions: RequestOptionsArgs = new RequestOptions({
+            method: RequestMethod.Get,
+            headers: headers,
+            search: queryParameters,
+            withCredentials:this.configuration.withCredentials
+        });
+        // https://github.com/swagger-api/swagger-codegen/issues/4037
+        if (extraHttpRequestParams) {
+            requestOptions = (<any>Object).assign(requestOptions, extraHttpRequestParams);
+        }
+
+        return this.http.request(path, requestOptions);
+    }
+
+    /**
+     * getTraseeByBikepark
+     * 
+     * @param id id
+     */
+    public getTraseeByBikeparkUsingGETWithHttpInfo(id: number, extraHttpRequestParams?: any): Observable<Response> {
+        const path = this.basePath + '/api/bikepark/traseu/${id}'
+                    .replace('${' + 'id' + '}', String(id));
+
+        let queryParameters = new URLSearchParams();
+        let headers = new Headers(this.defaultHeaders.toJSON()); // https://github.com/angular/angular/issues/6845
+        // verify required parameter 'id' is not null or undefined
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling getTraseeByBikeparkUsingGET.');
+        }
+        // to determine the Content-Type header
+        let consumes: string[] = [
+            'application/json'
+        ];
+
+        // to determine the Accept header
+        let produces: string[] = [
+            '*/*'
+        ];
+
+        let requestOptions: RequestOptionsArgs = new RequestOptions({
+            method: RequestMethod.Get,
+            headers: headers,
+            search: queryParameters,
+            withCredentials:this.configuration.withCredentials
+        });
+        // https://github.com/swagger-api/swagger-codegen/issues/4037
+        if (extraHttpRequestParams) {
+            requestOptions = (<any>Object).assign(requestOptions, extraHttpRequestParams);
+        }
+
+        return this.http.request(path, requestOptions);
+    }
+
+    /**
+     * recommend
+     * 
+     * @param userId userId
+     */
+    public recommendUsingGETWithHttpInfo(userId: number, extraHttpRequestParams?: any): Observable<Response> {
+        const path = this.basePath + '/api/bikepark/${userId}/recommendations'
+                    .replace('${' + 'userId' + '}', String(userId));
+
+        let queryParameters = new URLSearchParams();
+        let headers = new Headers(this.defaultHeaders.toJSON()); // https://github.com/angular/angular/issues/6845
+        // verify required parameter 'userId' is not null or undefined
+        if (userId === null || userId === undefined) {
+            throw new Error('Required parameter userId was null or undefined when calling recommendUsingGET.');
         }
         // to determine the Content-Type header
         let consumes: string[] = [
@@ -1029,6 +1075,100 @@ export class BikeparkcontrollerApi {
             method: RequestMethod.Put,
             headers: headers,
             body: applicant == null ? '' : JSON.stringify(applicant), // https://github.com/angular/angular/issues/10612
+            search: queryParameters,
+            withCredentials:this.configuration.withCredentials
+        });
+        // https://github.com/swagger-api/swagger-codegen/issues/4037
+        if (extraHttpRequestParams) {
+            requestOptions = (<any>Object).assign(requestOptions, extraHttpRequestParams);
+        }
+
+        return this.http.request(path, requestOptions);
+    }
+
+    /**
+     * updateBikeparkContact
+     * 
+     * @param id id
+     * @param contact contact
+     */
+    public updateBikeparkContactUsingPUTWithHttpInfo(id: number, contact: models.Contact, extraHttpRequestParams?: any): Observable<Response> {
+        const path = this.basePath + '/api/bikepark/edit/contact/${id}'
+                    .replace('${' + 'id' + '}', String(id));
+
+        let queryParameters = new URLSearchParams();
+        let headers = new Headers(this.defaultHeaders.toJSON()); // https://github.com/angular/angular/issues/6845
+        // verify required parameter 'id' is not null or undefined
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling updateBikeparkContactUsingPUT.');
+        }
+        // verify required parameter 'contact' is not null or undefined
+        if (contact === null || contact === undefined) {
+            throw new Error('Required parameter contact was null or undefined when calling updateBikeparkContactUsingPUT.');
+        }
+        // to determine the Content-Type header
+        let consumes: string[] = [
+            'application/json'
+        ];
+
+        // to determine the Accept header
+        let produces: string[] = [
+            '*/*'
+        ];
+
+        headers.set('Content-Type', 'application/json');
+
+        let requestOptions: RequestOptionsArgs = new RequestOptions({
+            method: RequestMethod.Put,
+            headers: headers,
+            body: contact == null ? '' : JSON.stringify(contact), // https://github.com/angular/angular/issues/10612
+            search: queryParameters,
+            withCredentials:this.configuration.withCredentials
+        });
+        // https://github.com/swagger-api/swagger-codegen/issues/4037
+        if (extraHttpRequestParams) {
+            requestOptions = (<any>Object).assign(requestOptions, extraHttpRequestParams);
+        }
+
+        return this.http.request(path, requestOptions);
+    }
+
+    /**
+     * updateBikepark
+     * 
+     * @param id id
+     * @param bikePark bikePark
+     */
+    public updateBikeparkUsingPUTWithHttpInfo(id: number, bikePark: models.BikePark, extraHttpRequestParams?: any): Observable<Response> {
+        const path = this.basePath + '/api/bikepark/edit/${id}'
+                    .replace('${' + 'id' + '}', String(id));
+
+        let queryParameters = new URLSearchParams();
+        let headers = new Headers(this.defaultHeaders.toJSON()); // https://github.com/angular/angular/issues/6845
+        // verify required parameter 'id' is not null or undefined
+        if (id === null || id === undefined) {
+            throw new Error('Required parameter id was null or undefined when calling updateBikeparkUsingPUT.');
+        }
+        // verify required parameter 'bikePark' is not null or undefined
+        if (bikePark === null || bikePark === undefined) {
+            throw new Error('Required parameter bikePark was null or undefined when calling updateBikeparkUsingPUT.');
+        }
+        // to determine the Content-Type header
+        let consumes: string[] = [
+            'application/json'
+        ];
+
+        // to determine the Accept header
+        let produces: string[] = [
+            '*/*'
+        ];
+
+        headers.set('Content-Type', 'application/json');
+
+        let requestOptions: RequestOptionsArgs = new RequestOptions({
+            method: RequestMethod.Put,
+            headers: headers,
+            body: bikePark == null ? '' : JSON.stringify(bikePark), // https://github.com/angular/angular/issues/10612
             search: queryParameters,
             withCredentials:this.configuration.withCredentials
         });

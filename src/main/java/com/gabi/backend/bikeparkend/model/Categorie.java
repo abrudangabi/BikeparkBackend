@@ -19,11 +19,14 @@ public class Categorie implements Serializable {
     @JsonIgnore
     private Concurs concurs;
 
-    private String tipDisciplina;
+    @Enumerated(EnumType.STRING)
+    private Disciplina tipDisciplina;
 
-    private String dificultate;
+    @Enumerated(EnumType.STRING)
+    private Dificultate dificultate;
 
-    private String varsta;
+    @Enumerated(EnumType.STRING)
+    private Varsta varsta;
 
     private Long lungime;
 
@@ -43,27 +46,27 @@ public class Categorie implements Serializable {
         this.concurs = concurs;
     }
 
-    public String getTipDisciplina() {
+    public Disciplina getTipDisciplina() {
         return tipDisciplina;
     }
 
-    public void setTipDisciplina(String tipDisciplina) {
+    public void setTipDisciplina(Disciplina tipDisciplina) {
         this.tipDisciplina = tipDisciplina;
     }
 
-    public String getDificultate() {
+    public Dificultate getDificultate() {
         return dificultate;
     }
 
-    public void setDificultate(String dificultate) {
+    public void setDificultate(Dificultate dificultate) {
         this.dificultate = dificultate;
     }
 
-    public String getVarsta() {
+    public Varsta getVarsta() {
         return varsta;
     }
 
-    public void setVarsta(String varsta) {
+    public void setVarsta(Varsta varsta) {
         this.varsta = varsta;
     }
 

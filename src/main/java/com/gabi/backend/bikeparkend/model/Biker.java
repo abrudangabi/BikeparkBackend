@@ -3,14 +3,18 @@ package com.gabi.backend.bikeparkend.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+@XmlRootElement
 @Entity
 @Table(name = "biker")
 public class Biker implements Serializable {
+
+    //TODO AICI VA FI RECOMANDARE
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -59,7 +63,25 @@ public class Biker implements Serializable {
 
     private String bicicleta;
 
-    private String disciplinaFavorita;
+    //private String disciplinaFavorita;
+    @Enumerated(EnumType.STRING)
+    private Disciplina disciplinaFavorita;
+
+    @JsonIgnore
+    @OneToMany(
+            mappedBy = "user_id",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.EAGER
+    )
+    private Set<Preferinte> preferinte = new HashSet<>();
+
+    /*@JsonIgnore
+    @ManyToMany
+    @JoinTable(name = "taste_preferences",
+                joinColumns = { @JoinColumn(name = "user_id") },
+            inverseJoinColumns = { @JoinColumn(name = "item_id") })
+    private final Set<BikePark> bikeParksPreferences = new HashSet<>();*/
 
     public Long getId() {
         return id;
@@ -119,11 +141,11 @@ public class Biker implements Serializable {
         this.bicicleta = bicicleta;
     }
 
-    public String getDisciplinaFavorita() {
+    public Disciplina getDisciplinaFavorita() {
         return disciplinaFavorita;
     }
 
-    public void setDisciplinaFavorita(String disciplinaFavorita) {
+    public void setDisciplinaFavorita(Disciplina disciplinaFavorita) {
         this.disciplinaFavorita = disciplinaFavorita;
     }
 
@@ -169,6 +191,19 @@ public class Biker implements Serializable {
     public void setRezervareConcurs(RezervareConcurs rezervareConcurs) {
         this.rezervareConcurs.add(rezervareConcurs);
         rezervareConcurs.setBiker(this);
+    }
+
+    public Set<Preferinte> getPreferinte() {
+        return preferinte;
+    }
+
+    public void addPreferinta(Preferinte preferinte) {
+        this.preferinte.add(preferinte);
+        preferinte.setUser_id(this);
+    }
+
+    public void setPreferinte(Set<Preferinte> preferinte) {
+        this.preferinte = preferinte;
     }
 
     @Override

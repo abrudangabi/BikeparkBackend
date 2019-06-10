@@ -26,6 +26,8 @@ public class RezervareConcurs implements Serializable {
 
     private Long numar;
 
+    // TODO AICI AR PUTEA FI LA CATEGORIE CEVA ENUM
+
     private String categorie;
 
     public Long getNumar() {

@@ -21,7 +21,7 @@ export interface Biker {
 
     dataNasterii?: Date;
 
-    disciplinaFavorita?: string;
+    disciplinaFavorita?: Biker.DisciplinaFavoritaEnum;
 
     id?: number;
 
@@ -33,4 +33,13 @@ export interface Biker {
 
     user?: models.User;
 
+}
+export namespace Biker {
+    export enum DisciplinaFavoritaEnum {
+        XC = <any> 'XC',
+        ENDURO = <any> 'ENDURO',
+        DH = <any> 'DH',
+        ROAD = <any> 'ROAD',
+        SLOPE = <any> 'SLOPE'
+    }
 }

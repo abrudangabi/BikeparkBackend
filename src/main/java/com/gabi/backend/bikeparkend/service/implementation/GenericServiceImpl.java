@@ -1,22 +1,41 @@
 package com.gabi.backend.bikeparkend.service.implementation;
 
 import com.gabi.backend.bikeparkend.exceptions.NotValidBikeparkException;
+import com.gabi.backend.bikeparkend.exceptions.NotValidBikerException;
+import com.gabi.backend.bikeparkend.exceptions.RecommendationException;
 import com.gabi.backend.bikeparkend.model.*;
 import com.gabi.backend.bikeparkend.repository.*;
 import com.gabi.backend.bikeparkend.repository.BikerRepository;
 import com.gabi.backend.bikeparkend.service.GenericService;
+import org.apache.mahout.cf.taste.common.TasteException;
+import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
+import org.apache.mahout.cf.taste.impl.neighborhood.ThresholdUserNeighborhood;
+import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
+import org.apache.mahout.cf.taste.impl.similarity.CityBlockSimilarity;
+import org.apache.mahout.cf.taste.model.DataModel;
+import org.apache.mahout.cf.taste.neighborhood.UserNeighborhood;
+import org.apache.mahout.cf.taste.recommender.ItemBasedRecommender;
+import org.apache.mahout.cf.taste.recommender.RecommendedItem;
+import org.apache.mahout.cf.taste.recommender.UserBasedRecommender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
+@Transactional
 public class GenericServiceImpl implements GenericService {
 
+    private static final int DEFAULT_LIMIT = 10;
+
     @Autowired
-    private AdministratorRepository administratorRepository;
+    private ItemBasedRecommender recommender;
+
+    /*@Autowired
+    private AdministratorRepository administratorRepository;*/
 
     @Autowired
     private BikeParkRepository bikeParkRepository;
@@ -53,6 +72,12 @@ public class GenericServiceImpl implements GenericService {
 
     @Autowired
     private RoleRepository roleRepository;
+
+    @Autowired
+    private PreferintaRepository preferintaRepository;
+
+    @Autowired
+    private SimilaritateRepository similaritateRepository;
 
     @PostConstruct
     private void loadData() {
@@ -362,6 +387,17 @@ public class GenericServiceImpl implements GenericService {
     }
 
     @Override
+    public Biker findBikerById(Long id) throws NotValidBikerException {
+        Optional<Biker> contactOptional = bikerRepository.findById(id);
+        if (!contactOptional.isPresent()) {
+            throw new NotValidBikerException("Biker with ID:" + id + " doesn't exist!");
+        }
+
+        Biker contact = contactOptional.get();
+        return contact;
+    }
+
+    @Override
     public List<Traseu> findTraseeByBikeparkId(Long id) {
         Optional<List<Traseu>> traseuList = traseuRepository.findAllByBikePark_Id(id);
 
@@ -391,6 +427,7 @@ public class GenericServiceImpl implements GenericService {
     public Traseu createTraseu(BikePark bikePark, Traseu traseu) throws NotValidBikeparkException {
         BikePark actualBikepark = findBikeparkById(bikePark.getId());
 
+        //traseu.setDificultate(Dificultate.usor);
         actualBikepark.addTraseu(traseu);
         return traseuRepository.saveAndFlush(traseu);
 
@@ -424,5 +461,96 @@ public class GenericServiceImpl implements GenericService {
         updateBikeparkContactFields(currentContact, contact);
 
         return contactRepository.save(currentContact);
+    }
+
+    //TODO RECOMANDARE
+
+    @Override
+    public void verifBD(Biker biker){
+        //Bikepark 1
+        BikePark bikePark1 = bikeParkRepository.getOne((long)1);
+        //Bikepark 2
+        BikePark bikePark2 = bikeParkRepository.getOne((long)2);
+        Preferinte preferinte = new Preferinte();
+        preferinte.setPreference(1);
+        //preferinte.setUser_id(user);
+        //preferinte.setItem_id(bikePark);
+
+        // Se adauga preferinta pt Bikepark 1 si Biker 1
+        biker.addPreferinta(preferinte);
+        bikePark1.addPreferinta(preferinte);
+        /*Set<Preferinte> preferinteSet = new HashSet<>();
+        preferinteSet.add(preferinte);
+        biker.setPreferinte(preferinteSet);*/
+        preferintaRepository.saveAndFlush(preferinte);
+        System.out.println("A salvat preferinta");
+
+        Similaritati similaritati = new Similaritati();
+        // Se face similaritate intre Bikepark 1 si Bikepark 2
+        similaritati.setSimilarity((double)1);
+        bikePark1.addSimilarite_A(similaritati);
+        bikePark2.addSimilarite_B(similaritati);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = true)
+    public List<BikePark> recommend(Biker user, int howMany) {
+        BikePark bikePark = bikeParkRepository.getOne((long)1);
+       /* Preferinte preferinte = new Preferinte();
+        preferinte.setPreference(1);
+        //preferinte.setUser_id(user);
+        preferinte.setItem_id(bikePark);
+        user.addPreferinta(preferinte);
+       *//* Set<Preferinte> preferinteSet = new HashSet<>();
+        preferinteSet.add(preferinte);
+        user.setPreferinte(preferinteSet);*//*
+        preferintaRepository.saveAndFlush(preferinte);*/
+
+        //TODO SUNT PROST, ACUM VAD CA E TRANSACTIONAL
+
+        /*Traseu traseu = new Traseu();
+        traseu.setDenumire("Rahat");
+        traseu.setDificultate("Greu");
+        traseu.setLungime((long)1200);
+        traseu.setTipTraseu("XC");
+        bikePark.addTraseu(traseu);
+        traseuRepository.saveAndFlush(traseu);*/
+
+        System.out.println(user.getPrenume());
+        System.out.println(howMany);
+        if (howMany <= 0) {
+            howMany = DEFAULT_LIMIT;
+        }
+        System.out.println(howMany);
+
+        return getRecommendedMovies(getItems(user.getId(), howMany));
+    }
+
+    private List<BikePark> getRecommendedMovies(final List<RecommendedItem> items) {
+        final List<BikePark> movies = new ArrayList<>();
+        int count = 0;
+        System.out.println("Face recomandare");
+        for (final RecommendedItem item : items) {
+            System.out.println("Intra la recomandari");
+            System.out.println(item.getItemID() + " " + item.getValue());
+            Optional<BikePark> movieOptional = bikeParkRepository.findById(item.getItemID());
+            BikePark movie = movieOptional.get();
+            //movie.setRank(++count);
+            movies.add(movie);
+        }
+
+        return movies;
+    }
+
+    private List<RecommendedItem> getItems(final Long userId, final int howMany) {
+        List<RecommendedItem> items = null;
+        try {
+            items = recommender.recommend(userId, howMany);
+            //items = null; //recommender.recommend(userId, howMany);
+        } catch (Exception e) { //TasteException
+            throw new RecommendationException("Unable to make recommendation for userId: " + userId);
+        }
+
+        return items;
     }
 }

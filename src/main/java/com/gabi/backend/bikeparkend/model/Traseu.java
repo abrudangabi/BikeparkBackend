@@ -24,9 +24,12 @@ public class Traseu implements Serializable {
 
     private Long lungime;
 
-    private String tipTraseu;
+    @Enumerated(EnumType.STRING)
+    private Disciplina tipTraseu;
 
-    private String dificultate;
+    //private String dificultate;
+    @Enumerated(EnumType.STRING)
+    private Dificultate dificultate;
 
     public Long getId() {
         return id;
@@ -60,19 +63,19 @@ public class Traseu implements Serializable {
         this.lungime = lungime;
     }
 
-    public String getTipTraseu() {
+    public Disciplina getTipTraseu() {
         return tipTraseu;
     }
 
-    public void setTipTraseu(String tipTraseu) {
+    public void setTipTraseu(Disciplina tipTraseu) {
         this.tipTraseu = tipTraseu;
     }
 
-    public String getDificultate() {
+    public Dificultate getDificultate() {
         return dificultate;
     }
 
-    public void setDificultate(String dificultate) {
+    public void setDificultate(Dificultate dificultate) {
         this.dificultate = dificultate;
     }
 

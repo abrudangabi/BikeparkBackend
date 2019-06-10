@@ -13,14 +13,34 @@
 import * as models from './models';
 
 export interface Categorie {
-    dificultate?: string;
+    dificultate?: Categorie.DificultateEnum;
 
     id?: number;
 
     lungime?: number;
 
-    tipDisciplina?: string;
+    tipDisciplina?: Categorie.TipDisciplinaEnum;
 
-    varsta?: string;
+    varsta?: Categorie.VarstaEnum;
 
+}
+export namespace Categorie {
+    export enum DificultateEnum {
+        Greu = <any> 'greu',
+        Mediu = <any> 'mediu',
+        Usor = <any> 'usor'
+    }
+    export enum TipDisciplinaEnum {
+        XC = <any> 'XC',
+        ENDURO = <any> 'ENDURO',
+        DH = <any> 'DH',
+        ROAD = <any> 'ROAD',
+        SLOPE = <any> 'SLOPE'
+    }
+    export enum VarstaEnum {
+        COPIL = <any> 'COPIL',
+        TANAR = <any> 'TANAR',
+        ADULT = <any> 'ADULT',
+        BATRAN = <any> 'BATRAN'
+    }
 }

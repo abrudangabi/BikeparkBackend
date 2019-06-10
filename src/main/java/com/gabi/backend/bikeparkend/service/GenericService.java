@@ -1,6 +1,7 @@
 package com.gabi.backend.bikeparkend.service;
 
 import com.gabi.backend.bikeparkend.exceptions.NotValidBikeparkException;
+import com.gabi.backend.bikeparkend.exceptions.NotValidBikerException;
 import com.gabi.backend.bikeparkend.model.*;
 
 import java.util.List;
@@ -70,4 +71,10 @@ public interface GenericService {
     Contact updateBikeparkContact(Long id, Contact contact);
 
     List<Traseu> findTraseeByBikeparkId(Long id);
+
+    Biker findBikerById(Long id) throws NotValidBikerException;
+
+    List<BikePark> recommend(Biker user, int howMany);
+
+    void verifBD(Biker biker);
 }

@@ -2,33 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="954cdad7-07fe-48be-9616-30e163cd7273" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/ConcursController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/requests/CreateCategorieConcurs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/requests/CreateRezervareBikepark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/requests/CreateRezervareConcurs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/requests/CreateTraseuBikepark.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/SpringConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/SpringDataConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/exceptions/AbstractBaseException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/exceptions/NotValidBikerException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/exceptions/RecommendationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Dificultate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Disciplina.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Preferinte.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Similaritati.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Varsta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/PreferintaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/SimilaritateRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/data/sql/ddl.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/data/sql/init.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/properties/db.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/properties/test.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/RezervareConcurs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/RezervareConcurs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/api/BikeparkcontrollerApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/api/BikeparkcontrollerApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/api/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/Biker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/Biker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/Categorie.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/Categorie.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/Role.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/Role.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/Traseu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/Traseu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/models.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/BikeParkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/BikeParkController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Administrator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/BikePark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/BikePark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Concurs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Concurs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Contact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Photo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Photo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Biker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Biker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Categorie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Categorie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/RezervareConcurs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/RezervareConcurs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/BikeParkRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/BikeParkRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/CategorieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/CategorieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/ContactRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/ContactRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/PhotoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/PhotoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/TraseuRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/TraseuRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/RoleString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/RoleString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Traseu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Traseu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/AdministratorRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/GenericService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/GenericService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/controller/BikeParkController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/controller/BikeParkController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/Administrator.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/BikePark.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/BikePark.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/Concurs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/Concurs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/Biker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/Biker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/Categorie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/Categorie.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/RezervareConcurs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/RezervareConcurs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/repository/BikeParkRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/repository/BikeParkRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/repository/CategorieRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/repository/CategorieRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/repository/TraseuRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/repository/TraseuRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/Traseu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/Traseu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/repository/AdministratorRepository.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/service/GenericService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/service/GenericService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.class" afterDir="false" />
     </list>
@@ -73,41 +95,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/BikeParkController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#760#790#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/BikePark.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3508#3509#0" expanded="true" />
-                <element signature="e#3535#3536#0" expanded="true" />
-                <element signature="e#3573#3574#0" expanded="true" />
-                <element signature="e#3605#3606#0" expanded="true" />
-                <element signature="e#3651#3652#0" expanded="true" />
-                <element signature="e#3693#3694#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/GenericService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="57" column="11" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="11" />
+            <state relative-caret-position="21">
+              <caret line="113" column="22" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -116,10 +107,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/ConcursController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Biker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1241">
-              <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+            <state relative-caret-position="1054">
+              <caret line="69" column="15" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,11 +121,34 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+            <state relative-caret-position="119">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/BikeParkController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3009">
+              <caret line="205" selection-start-line="205" selection-end-line="205" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1310#1311#0" expanded="true" />
+                <element signature="e#1397#1398#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/eaf737c2-3978-4dcb-9889-5653b1f18c68/console_3.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -150,24 +164,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>data</find>
-      <find>conc</find>
-      <find>cate</find>
-      <find>bike</find>
-      <find>tra</find>
-      <find>fraiere</find>
-      <find>detalii</find>
-      <find>bata</find>
-      <find>bikepark din</find>
-      <find>lazy</find>
-      <find>r</find>
-      <find>rezerva</find>
-      <find>rezerva`</find>
-      <find>se face</find>
-      <find>applicat</find>
-      <find>trase</find>
       <find>put</find>
-      <find>find</find>
       <find>getBikep</find>
       <find>delete</find>
       <find>traseu</find>
@@ -180,6 +177,23 @@
       <find>boot</find>
       <find>upda</find>
       <find>javax</find>
+      <find>commons-dbcp</find>
+      <find>bi</find>
+      <find>du-te</find>
+      <find>get</find>
+      <find>find</find>
+      <find>biker</find>
+      <find>add</find>
+      <find>simil</find>
+      <find>simi</find>
+      <find>role</find>
+      <find>roles</find>
+      <find>difi</find>
+      <find>dificultate</find>
+      <find>createT</find>
+      <find>admi</find>
+      <find>admin</find>
+      <find>concurs</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Gabi\IdeaProjects\ProiectBikePark_Final\src\main\java\com\gabi\backend\bikeparkend\config\angularSwaggerGenerator</dir>
@@ -191,26 +205,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Administrator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/BikeParkBackendApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/RezervareBikeParkRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/RezervareConcursRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/LocatieRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/AdministratorRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/BikerRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/GenericServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Locatie.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Biker.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/SwaggerConfig.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/SwaggerConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/exceptions/NotValidBikeparkException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/CorsFilter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Role.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/RoleString.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/RoleRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/ConcursRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/BikeParkRepository.java" />
@@ -219,19 +218,44 @@
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/PhotoRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Contact.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Photo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/RezervareConcurs.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/requests/CreateRezervareConcurs.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/requests/CreateCategorieConcurs.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/ConcursController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/requests/CreateRezervareBikepark.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/TraseuRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/requests/CreateTraseuBikepark.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/GenericService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/BikePark.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Concurs.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/data/sql/ddl.sql" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/properties/db.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/SpringDataConfig.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/eaf737c2-3978-4dcb-9889-5653b1f18c68/console_2.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/eaf737c2-3978-4dcb-9889-5653b1f18c68/console_3.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/exceptions/AbstractBaseException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/exceptions/RecommendationException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/exceptions/NotValidBikerException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/PreferintaRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/SimilaritateRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Preferinte.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/SpringConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/GenericService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Role.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Dificultate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/BikeParkController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Similaritati.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/BikePark.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Disciplina.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Biker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Traseu.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/RezervareConcurs.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Varsta.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Categorie.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Administrator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/RoleString.java" />
       </list>
     </option>
   </component>
@@ -264,8 +288,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -307,6 +329,27 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="bikeparkend" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProiectBikePark_Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProiectBikePark_Final" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bikeparkend" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="angularSwaggerGenerator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProiectBikePark_Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProiectBikePark_Final" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bikeparkend" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="angularSwaggerGenerator" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ProiectBikePark_Final" type="b2602c69:ProjectViewProjectNode" />
@@ -373,10 +416,45 @@
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="implementation" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ProiectBikePark_Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProiectBikePark_Final" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProiectBikePark_Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProiectBikePark_Final" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProiectBikePark_Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProiectBikePark_Final" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="sql" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ProiectBikePark_Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProiectBikePark_Final" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="properties" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -387,7 +465,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557952400380" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560153637929" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="D:/UBB/Licenta/Licenta/Diagrame" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
@@ -402,16 +480,17 @@
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.gabi.backend.bikeparkend.repository" />
+      <recent name="com.gabi.backend.bikeparkend.exceptions" />
       <recent name="com.gabi.backend.bikeparkend.config" />
       <recent name="com.gabi.backend.bikeparkend.config.angularSwaggerGenerator" />
       <recent name="com.gabi.backend.bikeparkend.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Gabi\IdeaProjects\ProiectBikePark_Final" />
       <recent name="C:\Users\Gabi\IdeaProjects\ProiectBikePark_Final\src\main\java\com\gabi\backend\bikeparkend\model" />
+      <recent name="C:\Users\Gabi\IdeaProjects\ProiectBikePark_Final\src\main\resources" />
+      <recent name="C:\Users\Gabi\IdeaProjects\ProiectBikePark_Final" />
       <recent name="C:\Users\Gabi\IdeaProjects\ProiectBikePark_Final\src\main\java\com\gabi\backend\bikeparkend\config" />
       <recent name="D:\UBB\Proiecte\ProiectBikePark\src\main\resources" />
-      <recent name="D:\UBB\Proiecte\ProiectBikePark\src\main\java\com\gabi\backend\bikeparkend\service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -541,11 +620,26 @@
       <workItem from="1557999972001" duration="1531000" />
       <workItem from="1558164868650" duration="3338000" />
       <workItem from="1558175746527" duration="198000" />
+      <workItem from="1558989561925" duration="2953000" />
+      <workItem from="1559019314645" duration="4668000" />
+      <workItem from="1559030006224" duration="4153000" />
+      <workItem from="1559066978227" duration="3028000" />
+      <workItem from="1559078426560" duration="452000" />
+      <workItem from="1559147812481" duration="10043000" />
+      <workItem from="1559209824245" duration="588000" />
+      <workItem from="1559244552752" duration="1191000" />
+      <workItem from="1559982304809" duration="624000" />
+      <workItem from="1559988315380" duration="3445000" />
+      <workItem from="1560001880509" duration="8688000" />
+      <workItem from="1560073921568" duration="151000" />
+      <workItem from="1560074131047" duration="2364000" />
+      <workItem from="1560143271018" duration="3339000" />
+      <workItem from="1560153061471" duration="447000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91435000" />
+    <option name="totallyTimeSpent" value="137569000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -560,7 +654,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.41225415" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.35098335" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -570,16 +664,16 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.3289689" />
       <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49924356" weight="0.3289689" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3289689" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49924356" visible="true" weight="0.33551556" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3289689" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.3289689" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.3289689" />
@@ -594,9 +688,47 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="right" id="Database" order="8" weight="0.32980332" />
-      <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.32980332" />
       <window_info anchor="right" id="Maven" order="10" weight="0.32980332" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34568834" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Database Console" order="0" weight="0.3289689" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.3289689" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49924356" weight="0.33551556" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.3289689" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3289689" />
+      <window_info anchor="bottom" id="Spring" order="12" weight="0.3289689" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.3289689" />
+      <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TypeScript" order="16" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Database" order="8" weight="0.32980332" />
+      <window_info anchor="right" id="Bean Validation" order="9" weight="0.32980332" />
+      <window_info anchor="right" id="Maven" order="10" weight="0.32980332" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -606,272 +738,244 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Role.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/commons-net/commons-net/3.1/commons-net-3.1.jar!/org/apache/commons/net/ntp/TimeStamp.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+        <state relative-caret-position="49">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/User.java">
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/taste_item_similarity/index/FKdrtegwqih7ghoom6enjot2gdo">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="54" column="19" lean-forward="true" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/.swagger-codegen/VERSION">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/index.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/instructiuniGenerareSwagger.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/properties/db.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/api/BikeparkcontrollerApi.ts">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/SpringConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-97">
-          <caret line="209" column="7" lean-forward="true" selection-start-line="209" selection-start-column="7" selection-end-line="209" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/RezervareConcurs.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/SwaggerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="87" selection-start-line="18" selection-start-column="87" selection-end-line="18" selection-end-column="87" />
+        <state relative-caret-position="158">
+          <caret line="30" column="2" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/ConcursRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="72" selection-start-line="7" selection-start-column="72" selection-end-line="7" selection-end-column="72" />
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.10.RELEASE/spring-aop-5.0.10.RELEASE.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/AdministratorRepository.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/2.0.11.RELEASE/spring-data-jpa-2.0.11.RELEASE.jar!/org/springframework/data/jpa/repository/JpaRepository.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="385">
+          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/BikerRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/ContactRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/requests/CreateTraseuBikepark.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/PhotoRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/bikepark_similaritati1" />
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/taste_preferences">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/CorsFilter.java">
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/taste_item_similarity">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Disciplina.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Concurs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/photo" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Traseu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Photo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="78" column="18" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Contact.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="105" column="18" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/RezervareBikePark.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/RezervareConcurs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-          <folding>
-            <element signature="e#702#703#0" expanded="true" />
-            <element signature="e#730#731#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/concurs" />
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/rezervareconcurs" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Categorie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/requests/CreateRezervareConcurs.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Locatie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        <state relative-caret-position="102">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Photo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/RezervareBikePark.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/RezervareConcurs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" column="51" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Preferinte.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/requests/CreateRezervareBikepark.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Traseu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#580#581#0" expanded="true" />
-            <element signature="e#611#612#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/rezervarebikepark" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/CategorieRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/TraseuRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+        <state relative-caret-position="442">
+          <caret line="29" column="33" lean-forward="true" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/requests/CreateTraseuBikepark.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/traseu">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/requests/CreateCategorieConcurs.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Dificultate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/locatie" />
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/contact" />
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/bikepark" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Concurs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="126" column="41" selection-start-line="126" selection-start-column="41" selection-end-line="126" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2890#2891#0" expanded="true" />
-            <element signature="e#2919#2920#0" expanded="true" />
-          </folding>
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/bikepark">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/categorie" />
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/traseu" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/biker">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/com.gabi.backend.bikeparkend">
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/categorie">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Categorie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="68" column="32" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Varsta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/AdministratorRepository.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Administrator.java" />
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.gabi.backend.bikeparkend.model">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
           <ID>JAVA</ID>
-          <OriginalElement>com.gabi.backend.bikeparkend</OriginalElement>
+          <OriginalElement>com.gabi.backend.bikeparkend.model</OriginalElement>
           <nodes>
-            <node x="" y="">com.gabi.backend.bikeparkend.model.Administrator</node>
             <node x="" y="">com.gabi.backend.bikeparkend.model.Locatie</node>
+            <node x="" y="">com.gabi.backend.bikeparkend.model.Disciplina</node>
+            <node x="" y="">com.gabi.backend.bikeparkend.model.Similaritati</node>
+            <node x="" y="">com.gabi.backend.bikeparkend.model.Dificultate</node>
             <node x="" y="">com.gabi.backend.bikeparkend.model.Role</node>
-            <node x="" y="">com.gabi.backend.bikeparkend.model.RezervareConcurs</node>
             <node x="" y="">com.gabi.backend.bikeparkend.model.Categorie</node>
+            <node x="" y="">com.gabi.backend.bikeparkend.model.RezervareConcurs</node>
+            <node x="" y="">com.gabi.backend.bikeparkend.model.Preferinte</node>
             <node x="" y="">com.gabi.backend.bikeparkend.model.RezervareBikePark</node>
             <node x="" y="">com.gabi.backend.bikeparkend.model.Concurs</node>
             <node x="" y="">com.gabi.backend.bikeparkend.model.User</node>
             <node x="" y="">com.gabi.backend.bikeparkend.model.Traseu</node>
             <node x="" y="">com.gabi.backend.bikeparkend.model.Biker</node>
+            <node x="" y="">com.gabi.backend.bikeparkend.model.Varsta</node>
             <node x="" y="">com.gabi.backend.bikeparkend.model.RoleString</node>
             <node x="" y="">com.gabi.backend.bikeparkend.model.BikePark</node>
             <node x="" y="">com.gabi.backend.bikeparkend.model.Contact</node>
             <node x="" y="">com.gabi.backend.bikeparkend.model.Photo</node>
-            <node x="" y="">com.gabi.backend.bikeparkend.model.Role.Builder</node>
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="390.0" y="226.0" />
+          <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="372.0" y="-87.0" />
           <SelectedNodes />
           <Categories>
             <Category>Fields</Category>
           </Categories>
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/RoleRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -884,28 +988,37 @@
             <node x="" y="">com.gabi.backend.bikeparkend.repository.CategorieRepository</node>
             <node x="" y="">com.gabi.backend.bikeparkend.repository.LocatieRepository</node>
             <node x="" y="">com.gabi.backend.bikeparkend.repository.ContactRepository</node>
+            <node x="" y="">com.gabi.backend.bikeparkend.repository.PreferintaRepository</node>
             <node x="" y="">com.gabi.backend.bikeparkend.repository.RezervareConcursRepository</node>
+            <node x="" y="">com.gabi.backend.bikeparkend.repository.SimilaritateRepository</node>
             <node x="" y="">com.gabi.backend.bikeparkend.repository.RezervareBikeParkRepository</node>
             <node x="" y="">com.gabi.backend.bikeparkend.repository.PhotoRepository</node>
-            <node x="" y="">com.gabi.backend.bikeparkend.repository.AdministratorRepository</node>
             <node x="" y="">com.gabi.backend.bikeparkend.repository.ConcursRepository</node>
             <node x="" y="">com.gabi.backend.bikeparkend.repository.RoleRepository</node>
-            <node x="" y="">com.gabi.backend.bikeparkend.repository.BikeParkRepository</node>
             <node x="" y="">com.gabi.backend.bikeparkend.repository.UserRepository</node>
+            <node x="" y="">com.gabi.backend.bikeparkend.repository.BikeParkRepository</node>
             <node x="" y="">com.gabi.backend.bikeparkend.repository.BikerRepository</node>
             <node x="" y="">com.gabi.backend.bikeparkend.repository.TraseuRepository</node>
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="210.0" y="241.0" />
+          <settings layout="Hierarchic Group" zoom="0.9131147540983606" x="327.0" y="295.0" />
           <SelectedNodes />
           <Categories>
-            <Category>Fields</Category>
-            <Category>Constructors</Category>
             <Category>Methods</Category>
           </Categories>
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/GenericService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="78" column="30" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -920,7 +1033,7 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="331.0" y="259.0" />
+          <settings layout="Hierarchic Group" zoom="0.7000000000000001" x="533.0" y="347.0" />
           <SelectedNodes />
           <Categories>
             <Category>Fields</Category>
@@ -946,7 +1059,7 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="73.0" y="91.0" />
+          <settings layout="Hierarchic Group" zoom="0.7911931818181818" x="518.0" y="332.0" />
           <SelectedNodes />
           <Categories>
             <Category>Fields</Category>
@@ -957,78 +1070,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-annotations/1.5.13/swagger-annotations-1.5.13.jar!/io/swagger/annotations/Api.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/RoleString.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Role.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="49" column="26" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/BikeParkRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/BikeParkBackendApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="323">
+          <caret line="19" column="61" lean-forward="true" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/BikeParkController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#760#790#0" expanded="true" />
-          </folding>
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/role_string">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/BikePark.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3508#3509#0" expanded="true" />
-            <element signature="e#3535#3536#0" expanded="true" />
-            <element signature="e#3573#3574#0" expanded="true" />
-            <element signature="e#3605#3606#0" expanded="true" />
-            <element signature="e#3651#3652#0" expanded="true" />
-            <element signature="e#3693#3694#0" expanded="true" />
-          </folding>
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/user_role">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/GenericService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="57" column="11" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="11" />
+        <state relative-caret-position="442">
+          <caret line="70" column="33" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/ConcursController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Similaritati.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1241">
-          <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+        <state relative-caret-position="187">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/eaf737c2-3978-4dcb-9889-5653b1f18c68.SCHEMA:bikepark">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>eaf737c2-3978-4dcb-9889-5653b1f18c68.SCHEMA:bikepark</OriginalElement>
+          <nodes>
+            <node x="" y="">eaf737c2-3978-4dcb-9889-5653b1f18c68.TABLE:bikepark.taste_item_similarity</node>
+            <node x="" y="">eaf737c2-3978-4dcb-9889-5653b1f18c68.TABLE:bikepark.bikepark</node>
+            <node x="" y="">eaf737c2-3978-4dcb-9889-5653b1f18c68.TABLE:bikepark.traseu</node>
+            <node x="" y="">eaf737c2-3978-4dcb-9889-5653b1f18c68.TABLE:bikepark.user_role</node>
+            <node x="" y="">eaf737c2-3978-4dcb-9889-5653b1f18c68.TABLE:bikepark.photo</node>
+            <node x="" y="">eaf737c2-3978-4dcb-9889-5653b1f18c68.TABLE:bikepark.categorie</node>
+            <node x="" y="">eaf737c2-3978-4dcb-9889-5653b1f18c68.TABLE:bikepark.contact</node>
+            <node x="" y="">eaf737c2-3978-4dcb-9889-5653b1f18c68.TABLE:bikepark.hibernate_sequence</node>
+            <node x="" y="">eaf737c2-3978-4dcb-9889-5653b1f18c68.TABLE:bikepark.concurs</node>
+            <node x="" y="">eaf737c2-3978-4dcb-9889-5653b1f18c68.TABLE:bikepark.users</node>
+            <node x="" y="">eaf737c2-3978-4dcb-9889-5653b1f18c68.TABLE:bikepark.taste_preferences</node>
+            <node x="" y="">eaf737c2-3978-4dcb-9889-5653b1f18c68.TABLE:bikepark.rezervarebikepark</node>
+            <node x="" y="">eaf737c2-3978-4dcb-9889-5653b1f18c68.TABLE:bikepark.locatie</node>
+            <node x="" y="">eaf737c2-3978-4dcb-9889-5653b1f18c68.TABLE:bikepark.biker</node>
+            <node x="" y="">eaf737c2-3978-4dcb-9889-5653b1f18c68.TABLE:bikepark.role_string</node>
+            <node x="" y="">eaf737c2-3978-4dcb-9889-5653b1f18c68.TABLE:bikepark.rezervareconcurs</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.4771968854282536" x="440.0" y="473.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Biker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1054">
+          <caret line="69" column="15" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1037,8 +1168,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        <state relative-caret-position="119">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/BikeParkController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3009">
+          <caret line="205" selection-start-line="205" selection-end-line="205" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1310#1311#0" expanded="true" />
+            <element signature="e#1397#1398#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/eaf737c2-3978-4dcb-9889-5653b1f18c68/console_3.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/BikePark.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/instructiuniGenerareSwagger.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/CreateRezervareBikepark.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/CreateCategorieConcurs.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/BikePark.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="113" column="22" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

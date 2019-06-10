@@ -38,11 +38,11 @@ public class User implements Serializable {
             mappedBy = "user")
     private BikePark bikePark;
 
-    @JsonIgnore
+    /*@JsonIgnore
     @OneToOne(fetch = FetchType.LAZY,
             cascade =  CascadeType.ALL,
             mappedBy = "user")
-    private Administrator administrator;
+    private Administrator administrator;*/
 
     @ManyToMany(
             cascade = CascadeType.DETACH,
@@ -64,7 +64,7 @@ public class User implements Serializable {
         return this;
     }
 
-    public Administrator getAdministrator() {
+    /*public Administrator getAdministrator() {
         return administrator;
     }
 
@@ -72,7 +72,7 @@ public class User implements Serializable {
         this.administrator = administrator;
         administrator.setUser(this);
         return this;
-    }
+    }*/
 
     public long getId() {
         return id;
@@ -108,6 +108,11 @@ public class User implements Serializable {
 
     public Set<Role> getRoles() {
         return roles;
+    }
+
+    public void addRole(Role role){
+        this.roles.add(role);
+        role.getUsers().add(this);
     }
 
     public void setRoles(Set<Role> roles) {

@@ -15,12 +15,26 @@ import * as models from './models';
 export interface Traseu {
     denumire?: string;
 
-    dificultate?: string;
+    dificultate?: Traseu.DificultateEnum;
 
     id?: number;
 
     lungime?: number;
 
-    tipTraseu?: string;
+    tipTraseu?: Traseu.TipTraseuEnum;
 
+}
+export namespace Traseu {
+    export enum DificultateEnum {
+        Greu = <any> 'greu',
+        Mediu = <any> 'mediu',
+        Usor = <any> 'usor'
+    }
+    export enum TipTraseuEnum {
+        XC = <any> 'XC',
+        ENDURO = <any> 'ENDURO',
+        DH = <any> 'DH',
+        ROAD = <any> 'ROAD',
+        SLOPE = <any> 'SLOPE'
+    }
 }

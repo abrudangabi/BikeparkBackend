@@ -12,15 +12,9 @@
 
 import * as models from './models';
 
-export interface Role {
-    roleId?: number;
+export interface CreateRezervareConcurs {
+    concurs?: models.Concurs;
 
-    roleString?: Role.RoleStringEnum;
+    rezervareConcurs?: models.RezervareConcurs;
 
-}
-export namespace Role {
-    export enum RoleStringEnum {
-        BIKER = <any> 'BIKER',
-        BIKEPARK = <any> 'BIKEPARK'
-    }
 }

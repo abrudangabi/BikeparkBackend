@@ -4,14 +4,18 @@ import com.gabi.backend.bikeparkend.controller.requests.CreateCategorieConcurs;
 import com.gabi.backend.bikeparkend.controller.requests.CreateRezervareBikepark;
 import com.gabi.backend.bikeparkend.controller.requests.CreateTraseuBikepark;
 import com.gabi.backend.bikeparkend.exceptions.NotValidBikeparkException;
+import com.gabi.backend.bikeparkend.exceptions.NotValidBikerException;
 import com.gabi.backend.bikeparkend.model.*;
 import com.gabi.backend.bikeparkend.service.GenericService;
 import io.swagger.annotations.Api;
+import org.apache.mahout.cf.taste.recommender.ItemBasedRecommender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.ws.rs.core.GenericEntity;
+import java.util.ArrayList;
 import java.util.List;
 
 @Api("BikeParkController")
@@ -19,6 +23,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/bikepark")
 public class BikeParkController {
+
+    /*@Autowired
+    private ItemBasedRecommender recommender;*/
 
     @Autowired
     private GenericService userService;
@@ -180,5 +187,40 @@ public class BikeParkController {
             return new ResponseEntity(HttpStatus.CONFLICT);
         return new ResponseEntity(traseu,HttpStatus.CREATED);
         //return new ResponseEntity(userService.addCategorie(categorie), HttpStatus.OK);
+    }
+
+    @GetMapping("/{userId}/recommendations")
+    public ResponseEntity recommend(@PathVariable Long userId/*, @RequestBody Integer limit*/) {
+        Integer limit = 2;
+        System.out.println("Intra aici");
+        System.out.println("User id " + userId);
+        List<BikePark> vals = new ArrayList<>();
+        GenericEntity<List<BikePark>> res = new GenericEntity<List<BikePark>>(vals) {};
+        /*try {
+            userService.verifBD(userService.findBikerById(userId));
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }*/
+
+        try{
+            vals = userService.recommend(userService.findBikerById(userId), limit);
+            for(BikePark m : vals){
+                System.out.println(m.toString());
+            }
+            res = new GenericEntity<List<BikePark>>(vals) {};
+            return new ResponseEntity(res, HttpStatus.OK);
+        } catch (NotValidBikerException e) {
+            System.out.println(e.getMessage());
+            return new ResponseEntity(res,HttpStatus.OK);
+        }
+
+        /*List<BikePark> vals = userService.recommend(userService.findBikerById(userId), limit);
+        for(BikePark m : vals){
+            System.out.println(m.toString());
+        }
+        GenericEntity<List<BikePark>> res = new GenericEntity<List<BikePark>>(vals) {};*/
+        //GenericEntity<List<BikePark>> res = new GenericEntity<List<BikePark>>(vals) {};
+
+        //return new ResponseEntity(res, HttpStatus.OK);
     }
 }

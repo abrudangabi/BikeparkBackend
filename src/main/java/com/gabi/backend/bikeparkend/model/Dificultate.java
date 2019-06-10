@@ -1,5 +1,5 @@
 package com.gabi.backend.bikeparkend.model;
 
-public enum RoleString {
-    BIKER,BIKEPARK
+public enum Dificultate {
+    greu,mediu,usor
 }

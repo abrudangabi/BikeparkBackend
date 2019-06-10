@@ -12,15 +12,9 @@
 
 import * as models from './models';
 
-export interface Role {
-    roleId?: number;
+export interface CreateTraseuBikepark {
+    bikePark?: models.BikePark;
 
-    roleString?: Role.RoleStringEnum;
+    traseu?: models.Traseu;
 
-}
-export namespace Role {
-    export enum RoleStringEnum {
-        BIKER = <any> 'BIKER',
-        BIKEPARK = <any> 'BIKEPARK'
-    }
 }

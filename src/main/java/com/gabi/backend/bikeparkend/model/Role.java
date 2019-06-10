@@ -1,7 +1,5 @@
 package com.gabi.backend.bikeparkend.model;
 
-
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
