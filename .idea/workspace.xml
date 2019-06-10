@@ -2,57 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="954cdad7-07fe-48be-9616-30e163cd7273" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/SpringConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/SpringDataConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/exceptions/AbstractBaseException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/exceptions/NotValidBikerException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/exceptions/RecommendationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Dificultate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Disciplina.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Preferinte.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Similaritati.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Varsta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/PreferintaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/SimilaritateRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/data/sql/ddl.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/data/sql/init.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/properties/db.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/properties/test.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/api/BikeparkcontrollerApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/api/BikeparkcontrollerApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/api/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/Biker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/Biker.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/Categorie.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/Categorie.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/Role.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/Role.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/Traseu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/Traseu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/angularSwaggerGenerator/model/models.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/BikeParkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/BikeParkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Administrator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/BikePark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/BikePark.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Biker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Biker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Categorie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Categorie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/RezervareConcurs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/RezervareConcurs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/RoleString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/RoleString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Traseu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Traseu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/repository/AdministratorRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/GenericService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/GenericService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/controller/BikeParkController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/controller/BikeParkController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/Administrator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/BikePark.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/BikePark.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/Biker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/Biker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/Categorie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/Categorie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/RezervareConcurs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/RezervareConcurs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/Traseu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/Traseu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/repository/AdministratorRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/service/GenericService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/service/GenericService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -97,8 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/BikePark.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="113" column="22" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
+            <state relative-caret-position="310">
+              <caret line="130" column="5" lean-forward="true" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -337,27 +287,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="bikeparkend" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="angularSwaggerGenerator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProiectBikePark_Final" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProiectBikePark_Final" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bikeparkend" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-              <item name="angularSwaggerGenerator" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProiectBikePark_Final" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProiectBikePark_Final" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bikeparkend" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -465,7 +394,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560153637929" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560154157008" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="D:/UBB/Licenta/Licenta/Diagrame" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
@@ -634,12 +563,12 @@
       <workItem from="1560073921568" duration="151000" />
       <workItem from="1560074131047" duration="2364000" />
       <workItem from="1560143271018" duration="3339000" />
-      <workItem from="1560153061471" duration="447000" />
+      <workItem from="1560153061471" duration="1009000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137569000" />
+    <option name="totallyTimeSpent" value="138131000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -652,9 +581,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.35098335" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35098335" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -668,7 +596,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49924356" visible="true" weight="0.33551556" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49924356" weight="0.33551556" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
@@ -1213,8 +1141,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/BikePark.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="113" column="22" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
+        <state relative-caret-position="310">
+          <caret line="130" column="5" lean-forward="true" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
