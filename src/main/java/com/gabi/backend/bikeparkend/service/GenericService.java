@@ -64,7 +64,7 @@ public interface GenericService {
 
     Traseu createTraseu(BikePark bikePark, Traseu traseu) throws NotValidBikeparkException;
 
-    RezervareBikePark createRezervareBikepark(BikePark bikePark, RezervareBikePark rezervareBikePark) throws NotValidBikeparkException;
+    RezervareBikePark createRezervareBikepark(BikePark bikePark, RezervareBikePark rezervareBikePark) throws NotValidBikeparkException, NotValidBikerException;
 
     BikePark updateBikepark(Long id, BikePark bikePark) throws NotValidBikeparkException;
 
@@ -73,6 +73,20 @@ public interface GenericService {
     List<Traseu> findTraseeByBikeparkId(Long id);
 
     Biker findBikerById(Long id) throws NotValidBikerException;
+
+    void resetarePreferinte();
+
+    void calculateSimilarities();
+
+    void curataSimilaritati();
+
+    void curataPreferinte();
+
+    void citestePreferinte();
+
+    void saveInPreferinte();
+
+    List<BikePark> recomanda(Biker biker);
 
     List<BikePark> recommend(Biker user, int howMany);
 

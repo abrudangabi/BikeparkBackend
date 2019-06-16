@@ -45,6 +45,7 @@ public class Similaritati implements Serializable {
     //@Column(name = "item_id_b")
     private BikePark item_id_b;*/
 
+    //Face similaritatea intre 2 Bikepark-uri
     private Double similarity;
 
     public BikePark getItem_id_a() {

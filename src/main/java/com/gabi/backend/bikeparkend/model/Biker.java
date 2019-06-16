@@ -17,7 +17,7 @@ public class Biker implements Serializable {
     //TODO AICI VA FI RECOMANDARE
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "biker_id")
     private Long id;
 
@@ -72,7 +72,7 @@ public class Biker implements Serializable {
             mappedBy = "user_id",
             cascade = CascadeType.ALL,
             orphanRemoval = true,
-            fetch = FetchType.EAGER
+            fetch = FetchType.LAZY
     )
     private Set<Preferinte> preferinte = new HashSet<>();
 
@@ -197,9 +197,45 @@ public class Biker implements Serializable {
         return preferinte;
     }
 
+    public void setPreferinta(Preferinte preferinta){
+        for(Preferinte p : this.preferinte){
+            if(p.getItem_id().equals(preferinta.getItem_id()) && p.getUser_id().equals(preferinta.getUser_id())){
+                //System.out.println("Chiar a gasit ceva");
+                p.setPreference(preferinta.getPreference());
+            }
+        }
+    }
+
+    public boolean preferintaExist(Preferinte preferinte){
+        boolean ok = false;
+        for(Preferinte p : this.preferinte){
+            if(p.getItem_id().equals(preferinte.getItem_id()) && p.getUser_id().equals(preferinte.getUser_id())){
+                ok = true;
+            }
+        }
+        return ok;
+    }
+
     public void addPreferinta(Preferinte preferinte) {
-        this.preferinte.add(preferinte);
-        preferinte.setUser_id(this);
+        if(preferintaExist(preferinte)){
+            //System.out.println("A mai existat");
+            this.setPreferinta(preferinte);
+        }
+        else {
+            //System.out.println("E nou");
+            this.preferinte.add(preferinte);
+            preferinte.setUser_id(this);
+        }
+    }
+
+    public Integer numarRezervate(BikePark bikePark){
+        Integer numar = 0;
+        for (RezervareBikePark r : this.rezervareBikeParks){
+            if(r.getBikePark().equals(bikePark)){
+                numar++;
+            }
+        }
+        return numar;
     }
 
     public void setPreferinte(Set<Preferinte> preferinte) {

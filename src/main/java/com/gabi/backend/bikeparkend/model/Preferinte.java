@@ -2,6 +2,7 @@ package com.gabi.backend.bikeparkend.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.net.ntp.TimeStamp;
+//import java.sql.Timestamp;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -22,23 +23,35 @@ public class Preferinte implements Serializable {
     //@Column(name = "item_id")
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "preferinta_id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    //@ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     @JsonIgnore
     private Biker user_id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    //@ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "item_id")
     @JsonIgnore
     private BikePark item_id;
 
-    private Integer preference;
+    private Double preference;
 
-    private TimeStamp timestamp = TimeStamp.getCurrentTime();
+    private TimeStamp timestamp; //= new TimeStamp(System.currentTimeMillis());
+    //private TimeStamp timestamp = TimeStamp.getCurrentTime();
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Biker getUser_id() {
         return user_id;
@@ -56,11 +69,11 @@ public class Preferinte implements Serializable {
         this.item_id = item_id;
     }
 
-    public Integer getPreference() {
+    public Double getPreference() {
         return preference;
     }
 
-    public void setPreference(Integer preference) {
+    public void setPreference(Double preference) {
         this.preference = preference;
     }
 
@@ -70,5 +83,10 @@ public class Preferinte implements Serializable {
 
     public void setTimestamp(TimeStamp timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public Prefera toPrefera(){
+        Prefera prefera = new Prefera(this.user_id.getId(),this.item_id.getId(),(double)this.preference);
+        return prefera;
     }
 }

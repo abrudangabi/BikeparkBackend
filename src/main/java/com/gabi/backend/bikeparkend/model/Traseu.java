@@ -11,7 +11,7 @@ import java.io.Serializable;
 public class Traseu implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "traseu_id")
     private Long id;
 

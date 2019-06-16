@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class Photo implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "photo_id")
     private Long id;
 

@@ -16,7 +16,7 @@ public class BikePark implements Serializable {
     //TODO AICI VA FI RECOMANDARE
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "bikepark_id")
     private Long id;
 
@@ -70,19 +70,186 @@ public class BikePark implements Serializable {
         traseu.setBikePark(this);
     }
 
-    public void addPreferinta(Preferinte preferinte){
-        this.preferinte.add(preferinte);
-        preferinte.setItem_id(this);
+    public void setPreferinta(Preferinte preferinta){
+        for(Preferinte p : this.preferinte){
+            if(p.getItem_id().equals(preferinta.getItem_id()) && p.getUser_id().equals(preferinta.getUser_id())){
+                p.setPreference(preferinta.getPreference());
+            }
+        }
     }
 
-    public void addSimilarite_A(Similaritati similaritati){
-        this.similaritati1.add(similaritati);
-        similaritati.setItem_id_a(this);
+    public boolean preferintaExist(Preferinte preferinte){
+        boolean ok = false;
+        for(Preferinte p : this.preferinte){
+            if(p.getItem_id().equals(preferinte.getItem_id()) && p.getUser_id().equals(preferinte.getUser_id())){
+                ok = true;
+            }
+        }
+        return ok;
+    }
+
+    public boolean similaritateExist(Similaritati similaritati){
+        boolean ok = false;
+        //System.out.println("Verificare");
+        //System.out.println(this.getId()+"   "+this.similaritati1.size());
+        for(Similaritati s : this.similaritati1){
+            System.out.println(similaritati.getItem_id_a().getId()+ "--" +similaritati.getItem_id_b().getId());
+            System.out.println(s.getItem_id_a().getId()+ "==" +s.getItem_id_b().getId());
+            if(s.getItem_id_a().equals(similaritati.getItem_id_a()) && s.getItem_id_b().equals(similaritati.getItem_id_b())){
+                ok = true;
+            }
+            /*if(s.getItem_id_a().getId().equals(similaritati.getItem_id_b().getId()) && s.getItem_id_b().getId().equals(similaritati.getItem_id_a().getId())){
+                ok = true;
+            }*/
+        }
+        return ok;
+    }
+
+    /*public boolean similaritateExistA(Similaritati similaritati){
+        boolean ok = false;
+        for(Similaritati s : this.similaritati1){
+            if(s.getItem_id_a().getId().equals(similaritati.getItem_id_a().getId()) && s.getItem_id_b().getId().equals(similaritati.getItem_id_b().getId())){
+                ok = true;
+            }
+            if(s.getItem_id_a().getId().equals(similaritati.getItem_id_b().getId()) && s.getItem_id_b().getId().equals(similaritati.getItem_id_a().getId())){
+                ok = true;
+            }
+        }
+        return ok;
+    }
+
+    public boolean similaritateExistB(Similaritati similaritati){
+        boolean ok = false;
+        for(Similaritati s : this.similaritati1){
+            if(s.getItem_id_a().getId().equals(similaritati.getItem_id_a().getId()) && s.getItem_id_b().getId().equals(similaritati.getItem_id_b().getId())){
+                ok = true;
+            }
+            if(s.getItem_id_a().getId().equals(similaritati.getItem_id_b().getId()) && s.getItem_id_b().getId().equals(similaritati.getItem_id_a().getId())){
+                ok = true;
+            }
+        }
+        return ok;
+    }*/
+
+    public void setSimilaritate(Similaritati similaritate){
+        for(Similaritati s : this.similaritati1){
+            if(s.getItem_id_a().equals(similaritate.getItem_id_a()) && s.getItem_id_b().equals(similaritate.getItem_id_b())){
+                System.out.println("Chiar a gasit ceva");
+                s.setSimilarity(similaritate.getSimilarity());
+            }
+            /*if(s.getItem_id_a().getId().equals(similaritate.getItem_id_b().getId()) && s.getItem_id_b().getId().equals(similaritate.getItem_id_a().getId())){
+                ok = true;
+            }*/
+        }
+    }
+
+    public void addPreferinta(Preferinte preferinte){
+        if (this.preferintaExist(preferinte)){
+            setPreferinta(preferinte);
+        }
+        else {
+            this.preferinte.add(preferinte);
+            preferinte.setItem_id(this);
+        }
+    }
+
+    /*public void addSimilarite_A(Similaritati similaritati){
+        System.out.println("IDuri similaritate A " + similaritati.getItem_id_a().getId() + " B " + similaritati.getItem_id_b().getId() + " sim " + similaritati.getSimilarity());
+        if(this.similaritateExist(similaritati)){
+            System.out.println("A mai existat A");
+            setSimilaritate(similaritati);
+        }
+        else {
+            System.out.println("E nou A");
+            this.similaritati1.add(similaritati);
+            similaritati.setItem_id_a(this);
+        }
     }
 
     public void addSimilarite_B(Similaritati similaritati){
+        System.out.println("IDuri similaritate A " + similaritati.getItem_id_a().getId() + " B " + similaritati.getItem_id_b().getId() + " sim " + similaritati.getSimilarity());
+        if(this.similaritateExist(similaritati)){
+            System.out.println("A mai existat B");
+            setSimilaritate(similaritati);
+        }
+        else {
+            System.out.println("E nou B");
+            this.similaritati1.add(similaritati);
+            similaritati.setItem_id_b(this);
+        }
+    }*/
+
+    //todo
+    /*public void addSimilarite_A(Similaritati similaritati){
+
+        if(this.similaritateExist(similaritati)){
+            System.out.println("A mai existat A");
+            setSimilaritate(similaritati);
+        }
+        else {
+            System.out.println("E nou A");
+            this.similaritati1.add(similaritati);
+            similaritati.setItem_id_a(this);
+        }
+    }*/
+
+    public void addSimilarite_A(Similaritati similaritati){
+
+        if(this.similaritateExist(similaritati)){
+            System.out.println("A mai existat A");
+            setSimilaritate(similaritati);
+        }
+        else {
+            System.out.println("E nou A");
+            this.similaritati1.add(similaritati);
+            similaritati.setItem_id_a(this);
+        }
+    }
+
+    public void addSimilarite_B(Similaritati similaritati){
+
+        if(this.similaritateExist(similaritati)){
+            System.out.println("A mai existat B");
+            setSimilaritate(similaritati);
+        }
+        else {
+            System.out.println("E nou B");
+            this.similaritati1.add(similaritati);
+            similaritati.setItem_id_b(this);
+        }
+    }
+
+    //todo
+    public void addSim(Similaritati similaritati){
         this.similaritati1.add(similaritati);
         similaritati.setItem_id_b(this);
+    }
+
+    public void addSimBazat(Similaritati similaritati){
+        this.similaritati1.add(similaritati);
+        similaritati.setItem_id_b(this);
+    }
+
+    public void addSimilaritate_A_B(Similaritati similaritati){
+       /* System.out.println(this.id + "  GUNOIUL DRACULUI  " + this.similaritati1.size());
+        System.out.println(bikePark.getId() + "  GUNOIUL DRACULUI  " + bikePark.getSimilaritati1().size());*/
+        //System.out.println("IDuri similaritate A " + similaritati.getItem_id_a().getId() + " B " + similaritati.getItem_id_b().getId() + " sim " + similaritati.getSimilarity());
+        //System.out.println(this.similaritati1.size());
+        System.out.println("DDDD " + similaritati.getItem_id_a().getId() + " " +similaritati.getItem_id_b().getId());
+        boolean daca = similaritateExist(similaritati);
+        if(daca){
+            System.out.println("A mai existat A B");
+            setSimilaritate(similaritati);
+        }
+        else {
+            System.out.println("E nou A B");
+            this.similaritati1.add(similaritati);
+            similaritati.setItem_id_a(this);
+            similaritati.setItem_id_b(similaritati.getItem_id_b());
+            //similaritati.getItem_id_b().addSim(similaritati);
+            /*similaritati.setItem_id_a(this);
+            similaritati.setItem_id_b(bikePark);*/
+        }
     }
 
     @JsonIgnore
@@ -127,7 +294,7 @@ public class BikePark implements Serializable {
             mappedBy = "item_id",
             cascade = CascadeType.ALL,
             orphanRemoval = true,
-            fetch = FetchType.EAGER
+            fetch = FetchType.LAZY
     )
     private Set<Preferinte> preferinte = new HashSet<>();
 
@@ -172,6 +339,14 @@ public class BikePark implements Serializable {
             inverseJoinColumns = { @JoinColumn(name = "item_id") })
     private Set<Preferinte> preferintes = new HashSet<>();*/
     //private final Set<BikePark> bikeParksPreferences = new HashSet<>();
+
+    /*public BikeParkB toBikeparkB(){
+        BikeParkB bikeParkB = new BikeParkB();
+        bikeParkB.setId(this.getId());
+        bikeParkB.setUser(this.getUser());
+        bikeParkB.setDenumire(this.getDenumire());
+        return bikeParkB;
+    }*/
 
     public void addConcurs(Concurs concurs) {
         this.concurs.add(concurs);
