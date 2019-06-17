@@ -113,7 +113,7 @@ public class BikeParkController {
                 );
         if (rezervareBikePark==null)
             return new ResponseEntity(HttpStatus.CONFLICT);
-        userService.resetarePreferinte();
+        //userService.resetarePreferinte();
         BikePark bikePark = userService.getBikeparkById(rezervareBikePark.getBikePark().getId());
         return new ResponseEntity(bikePark,HttpStatus.CREATED);
         //return new ResponseEntity(userService.rezervaBikepark(rezervareBikePark), HttpStatus.OK);
@@ -191,19 +191,19 @@ public class BikeParkController {
         //return new ResponseEntity(userService.addCategorie(categorie), HttpStatus.OK);
     }
 
-    @GetMapping("/{userId}/recommendations")
-    public ResponseEntity recommend(@PathVariable Long userId/*, @RequestBody Integer limit*/) {
+    /*@GetMapping("/{userId}/recommendations")
+    public ResponseEntity recommend(@PathVariable Long userId*//*, @RequestBody Integer limit*//*) {
         Integer limit = 2;
         System.out.println("Intra aici");
         System.out.println("User id " + userId);
         //userService.curataSimilaritati();
         List<BikePark> vals = new ArrayList<>();
         GenericEntity<List<BikePark>> res = new GenericEntity<List<BikePark>>(vals) {};
-        /*try {
+        *//*try {
             userService.verifBD(userService.findBikerById(userId));
         }catch (Exception e){
             System.out.println(e.getMessage());
-        }*/
+        }*//*
         //userService.calculateSimilarities();
         try {
             System.out.println("Ce naiba ii ia atata");
@@ -221,18 +221,40 @@ public class BikeParkController {
             }
             res = new GenericEntity<List<BikePark>>(vals) {};
             return new ResponseEntity(res, HttpStatus.OK);
-        /*} catch (NotValidBikerException e) {
+        *//*} catch (NotValidBikerException e) {
             System.out.println(e.getMessage());
             return new ResponseEntity(res,HttpStatus.OK);
-        }*/
+        }*//*
 
-        /*List<BikePark> vals = userService.recommend(userService.findBikerById(userId), limit);
+        *//*List<BikePark> vals = userService.recommend(userService.findBikerById(userId), limit);
         for(BikePark m : vals){
             System.out.println(m.toString());
         }
-        GenericEntity<List<BikePark>> res = new GenericEntity<List<BikePark>>(vals) {};*/
+        GenericEntity<List<BikePark>> res = new GenericEntity<List<BikePark>>(vals) {};*//*
         //GenericEntity<List<BikePark>> res = new GenericEntity<List<BikePark>>(vals) {};
 
         //return new ResponseEntity(res, HttpStatus.OK);
+    }*/
+
+    @GetMapping("/{userId}/recommendations")
+    public ResponseEntity recommend(@PathVariable Long userId/*, @RequestBody Integer limit*/) {
+        System.out.println("Intra aici");
+        System.out.println("User id " + userId);
+        List<BikePark> vals = new ArrayList<>();
+        //GenericEntity<List<BikePark>> res = new GenericEntity<List<BikePark>>(vals) {};
+        try {
+            System.out.println("Ce naiba ii ia atata");
+            vals = userService.recomanda(userService.findBikerById(userId));
+        }catch (NotValidBikerException e) {
+            System.out.println(e.getMessage());
+            return new ResponseEntity(vals,HttpStatus.OK);
+        }
+
+        System.out.println("Acum e gata ala");
+        /*for(BikePark m : vals){
+            System.out.println(m.toString());
+        }*/
+        //res = new GenericEntity<List<BikePark>>(vals) {};
+        return new ResponseEntity(vals, HttpStatus.OK);
     }
 }

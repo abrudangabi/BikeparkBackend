@@ -50,7 +50,7 @@ import java.util.stream.Collectors;
 @Transactional
 public class GenericServiceImpl implements GenericService {
 
-    private static final int DEFAULT_LIMIT = 10;
+    private static final int DEFAULT_LIMIT = 20;
 
     /*@Autowired
     private DataSource dataSource;*/
@@ -463,12 +463,14 @@ public class GenericServiceImpl implements GenericService {
         System.out.println("Ziua rezervare "+rezervareBikePark.getZiua());
         System.out.println("Id rezervare " + rezervareBikePark.getId());*/
         BikePark actualBikepark = getBikeparkById(bikePark.getId());
-        Biker actualBiker = findBikerById((long)1);
+        Biker actualBiker = findBikerById((long)20);
         //Rezervarea deja e construita; mai trebuie legata de bikepark si de biker
 
         actualBiker.addRezervareBikeParks(rezervareBikePark);
         actualBikepark.addRezervareBikeParks(rezervareBikePark);
         RezervareBikePark rezervareBikeParkFinal = rezervareBikeParkRepository.saveAndFlush(rezervareBikePark);
+
+        modificaPreferinte(actualBiker, actualBikepark);
         //System.out.println("Id nou rezervare "+rezervareBikeParkFinal.getId());
         //TODO CALCULARE PREFERINTA PT BIKER
         //TODO SE FACE DUPA NR DE REZERVARI
@@ -488,6 +490,34 @@ public class GenericServiceImpl implements GenericService {
         return rezervareBikeParkFinal;
         //return rezervareBikeParkRepository.saveAndFlush(rezervareBikePark);
 
+    }
+
+    public void modificaPreferinte(Biker biker, BikePark bikePark){
+        List<Prefera> preferaList = new ArrayList<>();
+        preferaList = loadPreferinte();
+        System.out.println("Modifica Preferinte inceput " + preferaList.size());
+
+        //TODO GET USER BIKER
+        //Biker actualBiker = findBikerById((long)1);
+
+        int gasit = 0;
+        for(Prefera p : preferaList){
+            if(p.getUser_id().equals(biker.getId()) && p.getItem_id().equals(bikePark.getId())){
+                gasit = 1;
+                if(p.getPreference() <= 3.5){
+                    p.setPreference(p.getPreference() + 0.5);
+                }
+            }
+        }
+        System.out.println("Ce a gasit " + gasit);
+        if (gasit == 0){
+            Prefera prefera = new Prefera(biker.getId(),bikePark.getId(),0.5);
+            preferaList.add(prefera);
+        }
+
+        System.out.println("Modifica Preferinte final " + preferaList.size());
+        //saveInPreferinte();
+        modificaFisier(preferaList);
     }
 
     //TODO FUNCTIONAL
@@ -545,6 +575,21 @@ public class GenericServiceImpl implements GenericService {
             for(Preferinte p : preferinteList){
                 String line = ""+p.getUser_id().getId()+ ","+
                         p.getItem_id().getId()+ ","+
+                        (double)p.getPreference()+ "\n";
+                pw.write(line);
+            }
+        }catch(IOException e){
+            System.err.println(e);
+        }
+    }
+
+    public void modificaFisier(List<Prefera> preferaList){
+
+        String filename = "C:\\Users\\Gabi\\IdeaProjects\\ProiectBikePark_Final\\src\\main\\resources\\prefera.txt";
+        try(PrintWriter pw = new PrintWriter(filename)){
+            for(Prefera p : preferaList){
+                String line = ""+p.getUser_id()+ ","+
+                        p.getItem_id()+ ","+
                         (double)p.getPreference()+ "\n";
                 pw.write(line);
             }
@@ -623,7 +668,7 @@ public class GenericServiceImpl implements GenericService {
         return bikeParks;
     }
 
-    public List<RecommendedItem> recomandaLista(Integer idUser){
+    public List<RecommendedItem> recomandaLista(Long idUser){
         List<RecommendedItem> itemRecommendations = null;
         try {
             DataModel dataModel = new FileDataModel(new File("C:\\Users\\Gabi\\IdeaProjects\\ProiectBikePark_Final\\src\\main\\resources\\prefera.txt"));
@@ -793,7 +838,7 @@ public class GenericServiceImpl implements GenericService {
         System.out.println("Cate preferinte " + preferintaRepository.findByIdEquals((long)1).size());*/
         //System.out.println("Cate preferinte " + preferintaRepository.findByPreference(3.5).size());
 
-        boolean merge = true;
+        boolean merge = false;
         if (merge) {
             System.out.println("MYSQL Recomandare");
             try {
@@ -906,6 +951,9 @@ public class GenericServiceImpl implements GenericService {
                 System.err.println("Exception occured !");
             }
         }
+        bikeParks = getBikeparkRecomandate(recomandaLista(biker.getId()));
+        System.out.println("Lungime bikepark recomandate " + bikeParks.size());
+
         return bikeParks;
     }
 
