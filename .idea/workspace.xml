@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="954cdad7-07fe-48be-9616-30e163cd7273" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/BikeParkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/BikeParkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/prefera.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/prefera.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/controller/BikeParkController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/controller/BikeParkController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,11 +44,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2285">
-              <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
+            <state relative-caret-position="289">
+              <caret line="689" column="5" selection-start-line="689" selection-start-column="5" selection-end-line="689" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -64,7 +59,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Prefera.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
+            <state relative-caret-position="442">
               <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -90,7 +85,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Biker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
+            <state relative-caret-position="1139">
               <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -99,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/BikeParkController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="253" column="33" lean-forward="true" selection-start-line="253" selection-start-column="33" selection-end-line="253" selection-end-column="33" />
+            <state relative-caret-position="3740">
+              <caret line="248" column="47" selection-start-line="248" selection-start-column="47" selection-end-line="248" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1310#1311#0" expanded="true" />
@@ -124,8 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>0.6</find>
-      <find>recommende</find>
       <find>recommender</find>
       <find>0.0</find>
       <find>1.0</find>
@@ -154,6 +147,8 @@
       <find>,20,</find>
       <find>20,</find>
       <find>all/bik</find>
+      <find>cate pref</find>
+      <find>Mai merge</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Gabi\IdeaProjects\ProiectBikePark_Final\src\main\java\com\gabi\backend\bikeparkend\config\angularSwaggerGenerator</dir>
@@ -237,7 +232,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -249,6 +244,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -384,7 +380,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -587,12 +582,15 @@
       <workItem from="1560676915327" duration="14828000" />
       <workItem from="1560703922209" duration="267000" />
       <workItem from="1560712497146" duration="6906000" />
-      <workItem from="1560757610961" duration="3537000" />
+      <workItem from="1560757610961" duration="3863000" />
+      <workItem from="1560777512732" duration="225000" />
+      <workItem from="1560800802080" duration="3197000" />
+      <workItem from="1560884480626" duration="146000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="264774000" />
+    <option name="totallyTimeSpent" value="268668000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -605,9 +603,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2730711" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28668684" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -777,69 +774,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/categorie">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/role_string">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/photo">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/locatie">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/bikepark_similaritati1">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/user_role">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/contact">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/traseu">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/categorie" />
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/role_string" />
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/photo" />
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/locatie" />
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/bikepark_similaritati1" />
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/user_role" />
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/contact" />
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/traseu" />
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/users" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/mahout/mahout-integration/0.13.0/mahout-integration-0.13.0.jar!/org/apache/mahout/cf/taste/impl/model/jdbc/MySQLJDBCDataModel.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -857,27 +800,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/taste_item_similarity">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/biker">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/bikepark">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/taste_item_similarity" />
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/biker" />
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/bikepark" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.0.11.RELEASE/spring-data-commons-2.0.11.RELEASE.jar!/org/springframework/data/repository/CrudRepository.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -906,13 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ratings.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.47/mysql-connector-java-5.1.47.jar!/com/mysql/jdbc/jdbc2/optional/MysqlDataSource.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -927,20 +845,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ratings2.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="769" column="9" lean-forward="true" selection-start-line="769" selection-start-column="9" selection-end-line="769" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/taste_preferences">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/taste_preferences" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Preferinte.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
@@ -955,38 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/BikePark.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4930">
-          <caret line="296" column="34" selection-start-line="296" selection-start-column="34" selection-end-line="296" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Biker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Prefera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#781#782#0" expanded="true" />
-            <element signature="e#814#815#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1018,10 +891,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ratings2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13073">
+          <caret line="769" column="9" lean-forward="true" selection-start-line="769" selection-start-column="9" selection-end-line="769" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ratings.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2285">
-          <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
+        <state relative-caret-position="289">
+          <caret line="689" column="5" selection-start-line="689" selection-start-column="5" selection-end-line="689" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Prefera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
+            <element signature="e#814#815#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/BikePark.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4930">
+          <caret line="296" column="34" selection-start-line="296" selection-start-column="34" selection-end-line="296" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/Biker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1139">
+          <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1030,8 +949,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/BikeParkController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="253" column="33" lean-forward="true" selection-start-line="253" selection-start-column="33" selection-end-line="253" selection-end-column="33" />
+        <state relative-caret-position="3740">
+          <caret line="248" column="47" selection-start-line="248" selection-start-column="47" selection-end-line="248" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1310#1311#0" expanded="true" />
