@@ -25,17 +25,17 @@ public class UserController {
     @GetMapping("/user")
     public ResponseEntity getAuthenticatedUser(){
         //TODO TOKEN
-        //User user =genericService.getAuthenticatedUser();
-        User user = new User();
+        User user =genericService.getAuthenticatedUser();
+        //User user = new User();
         return new ResponseEntity(user, HttpStatus.OK);
     }
     //@PreAuthorize("hasAuthority('COMPANY')")
     @GetMapping("/user/bikepark/{id}")
     public ResponseEntity getAuthenticatedBikepark(@PathVariable Long id) throws NotValidBikeparkException {
         //TODO
-        //BikePark bikePark = genericService.getBikeparkById(id);
+        BikePark bikePark = genericService.getBikeparkById(id);
         System.out.println("Vrea Bikepark id "+id);
-        BikePark bikePark = genericService.getBikeparkById((long)1);
+        //BikePark bikePark = genericService.getBikeparkById((long)1);
         return new ResponseEntity(bikePark, HttpStatus.OK);
     }
     //@PreAuthorize("hasAuthority('APPLICANT')")
@@ -44,7 +44,7 @@ public class UserController {
         /*Biker applicant = genericService.getApplicantByUserId(id);
         return new ResponseEntity(applicant, HttpStatus.OK);*/
         System.out.println("Vrea Biker id "+id);
-        Biker biker = genericService.getBikerById((long)1);
+        Biker biker = genericService.getBikerById(id);
         return new ResponseEntity(biker,HttpStatus.OK);
     }
 

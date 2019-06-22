@@ -30,6 +30,8 @@ public interface GenericService {
 
     List<Photo> getAllPhotos();
 
+    User getAuthenticatedUser();
+
     List<BikeparkReservationRequest> getAllRezervariBikeparkForBiker();
 
     List<RezervareBikePark> getAllRezervariBikeparkByBiker(Long id) throws NotValidBikerException;
@@ -43,6 +45,14 @@ public interface GenericService {
     Biker getBikerById(Long id) throws NotValidBikerException;
 
     Biker updateApplicant(Long id, Biker applicant);
+
+    Biker registerBiker(User user, Biker biker);
+
+    boolean checkUsernameExists(User user);
+
+    boolean checkEmailExists(User user);
+
+    BikePark registerBikepark(User user, BikePark bikePark);
 
     RezervareBikePark rezervaBikepark(RezervareBikePark rezervareBikePark);
 

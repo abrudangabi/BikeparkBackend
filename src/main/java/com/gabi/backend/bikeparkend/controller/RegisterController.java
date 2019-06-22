@@ -1,6 +1,10 @@
 package com.gabi.backend.bikeparkend.controller;
 
 
+import com.gabi.backend.bikeparkend.controller.requests.RegisterBikeparkRequest;
+import com.gabi.backend.bikeparkend.controller.requests.RegisterBikerRequest;
+import com.gabi.backend.bikeparkend.exceptions.RegisterBikeparkException;
+import com.gabi.backend.bikeparkend.exceptions.RegisterBikerException;
 import com.gabi.backend.bikeparkend.model.BikePark;
 import com.gabi.backend.bikeparkend.model.Biker;
 import com.gabi.backend.bikeparkend.model.User;
@@ -19,12 +23,12 @@ public class RegisterController {
     @Autowired
     private GenericService userService;
 
-    /*@PostMapping(value = "/register/biker")
-    public ResponseEntity registerApplicant(@RequestBody RegisterApplicantRequest registerApplicantRequest){
+    @PostMapping(value = "/register/biker")
+    public ResponseEntity registerApplicant(@RequestBody RegisterBikerRequest registerBikerRequest){
         Biker bikerResult =
-        userService.registerApplicant(
-                registerApplicantRequest.getUser(),
-                registerApplicantRequest.getApplicant()
+        userService.registerBiker(
+                registerBikerRequest.getUser(),
+                registerBikerRequest.getBiker()
         );
         if(bikerResult==null)
             return new ResponseEntity(HttpStatus.CONFLICT);
@@ -32,19 +36,19 @@ public class RegisterController {
     }
 
     @PostMapping(value = "/register/bikepark")
-    public ResponseEntity registerCompany(@RequestBody RegisterCompanyRequest registerCompanyRequest) throws NotValidCompanyException {
+    public ResponseEntity registerCompany(@RequestBody RegisterBikeparkRequest registerBikeparkRequest) {
         BikePark bikeParkResult =
-                userService.registerCompany(
-                        registerCompanyRequest.getUser(),
-                        registerCompanyRequest.getCompany()
+                userService.registerBikepark(
+                        registerBikeparkRequest.getUser(),
+                        registerBikeparkRequest.getBikePark()
                 );
         if(bikeParkResult==null)
             return new ResponseEntity(HttpStatus.CONFLICT);
         return new ResponseEntity(bikeParkResult,HttpStatus.CREATED);
-    }*/
+    }
 
 
-    /*@PostMapping(value = "/register/checkusername")
+    @PostMapping(value = "/register/checkusername")
     public ResponseEntity checkUsername(@RequestBody User user){
         boolean exists = userService.checkUsernameExists(user);
         return new ResponseEntity(exists,HttpStatus.OK);
@@ -53,16 +57,16 @@ public class RegisterController {
     public ResponseEntity checkEmail(@RequestBody User user){
         boolean exists = userService.checkEmailExists(user);
         return new ResponseEntity(exists,HttpStatus.OK);
-    }*/
+    }
 
-    /*@ExceptionHandler(RegisterApplicantException.class)
-    public @ResponseBody ResponseEntity handleRegisterApplicantExceptions(RegisterApplicantException exception) {
+    @ExceptionHandler(RegisterBikerException.class)
+    public @ResponseBody ResponseEntity handleRegisterApplicantExceptions(RegisterBikerException exception) {
         return new ResponseEntity(exception,HttpStatus.CONFLICT);
     }
 
 
-    @ExceptionHandler(RegisterCompanyException.class)
-    public @ResponseBody ResponseEntity handleRegisterCompanyExceptions(RegisterCompanyException exception) {
+    @ExceptionHandler(RegisterBikeparkException.class)
+    public @ResponseBody ResponseEntity handleRegisterCompanyExceptions(RegisterBikeparkException exception) {
         return new ResponseEntity(exception,HttpStatus.CONFLICT);
-    }*/
+    }
 }

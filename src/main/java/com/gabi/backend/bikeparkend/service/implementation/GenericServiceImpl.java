@@ -119,6 +119,68 @@ public class GenericServiceImpl implements GenericService {
 
     }
 
+    private void initDefaultContactForBiker(Biker biker) {
+        Contact contact = new Contact();
+        contact.setFacebookLink("");
+        contact.setPhoneNumber("");
+        contact.setWebsite("");
+
+        biker.setContact(contact);
+        contactRepository.saveAndFlush(contact);
+    }
+
+    private void initDefaultAddressForBiker(Contact contact) {
+        Locatie locatie = new Locatie();
+        locatie.setNumber("");
+        locatie.setStrada("");
+        locatie.setCodPostal("");
+        locatie.setLocalitate("");
+        locatie.setTara("");
+        locatie.setProvincie("");
+
+        contact.setLocatie(locatie);
+        locatieRepository.saveAndFlush(locatie);
+    }
+
+    private void initDefaulPhotoForBiker(Contact contact) {
+
+        Photo photo = new Photo();
+        contact.setPhoto(photo);
+
+        photoRepository.saveAndFlush(photo);
+    }
+
+    private void initDefaultContactForBikepark(BikePark bikePark) {
+        Contact contact = new Contact();
+        contact.setFacebookLink("");
+        contact.setPhoneNumber("");
+        contact.setWebsite("");
+
+        bikePark.setContact(contact);
+        contactRepository.saveAndFlush(contact);
+    }
+
+    private void initDefaultAddressForBikepark(Contact contact) {
+        Locatie locatie = new Locatie();
+        locatie.setNumber("");
+        locatie.setStrada("");
+        locatie.setCodPostal("");
+        locatie.setLocalitate("");
+        locatie.setTara("");
+        locatie.setProvincie("");
+
+        contact.setLocatie(locatie);
+        locatieRepository.saveAndFlush(locatie);
+    }
+
+    private void initDefaulPhotoForBikepark(BikePark bikePark) {
+
+        Photo photo = new Photo();
+        bikePark.getContact().setPhoto(photo);
+        photoRepository.saveAndFlush(photo);
+
+    }
+
     @Override
     public List<BikePark> getAllBikeParks(){
         List<BikePark> bikeParks = bikeParkRepository.findAll();
@@ -256,6 +318,23 @@ public class GenericServiceImpl implements GenericService {
         updateFirstNameBiker(currentApplicant, applicant);
 
         return bikerRepository.save(currentApplicant);
+    }
+
+    @Override
+    public User getAuthenticatedUser() {
+        //TODO MARE DE TOT
+        //Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        //String string = (String) authentication.getPrincipal();
+        String string = "";
+        User user = null;
+        Optional<User> userUsername = userRepository.findByUsername(string);
+        if (!userUsername.isPresent()) {
+            Optional<User> userEmail = userRepository.findByEmail(string);
+            if (userEmail.isPresent())
+                user = userEmail.get();
+        } else
+            user = userUsername.get();
+        return user;
     }
 
     //TODO CRED CA NU-L MAI FOLOSESC
@@ -640,6 +719,68 @@ public class GenericServiceImpl implements GenericService {
         //TODO SE FACE DUPA NR DE REZERVARI
 
         return rezervareBikeParkFinal;
+    }
+
+    @Override
+    public Biker registerBiker(User user, Biker biker) {
+        user.setActive(true);
+        Set<Role> roles = new HashSet<>();
+        roles.add(roleRepository.findByRoleStringEquals(RoleString.BIKER));
+        user.setRoles(roles);
+        //user.setPassword(SecurityConfig.passwordEncoder().encode(user.getPassword()));
+        User userResult = userRepository.save(user);
+        userResult.setBiker(biker);
+        Biker currentBiker = bikerRepository.saveAndFlush(biker);
+        Contact contact = currentBiker.getContact();
+        if (contact == null) {
+            initDefaultContactForBiker(currentBiker);
+
+            Contact currentContact = currentBiker.getContact();
+
+            initDefaultAddressForBiker(currentContact);
+            initDefaulPhotoForBiker(currentContact);
+        } else {
+            //setLatLngForAddress(contact.getAddress());
+        }
+        if (biker.getAniExperienta() == null) {
+            biker.setAniExperienta(0);
+        }
+        return currentBiker;
+    }
+
+    @Override
+    public BikePark registerBikepark(User user, BikePark bikePark) {
+        user.setActive(true);
+        Set<Role> roles = new HashSet<>();
+        roles.add(roleRepository.findByRoleStringEquals(RoleString.BIKEPARK));
+        user.setRoles(roles);
+        //user.setPassword(SecurityConfig.passwordEncoder().encode(user.getPassword()));
+        User userResult = userRepository.save(user);
+        userResult.setBikePark(bikePark);
+        BikePark currentBikepark = bikeParkRepository.saveAndFlush(bikePark);
+        Contact contact = currentBikepark.getContact();
+
+        if (contact != null) {
+            //setLatLngForAddress(contact.getAddress());
+        } else {
+            initDefaultContactForBikepark(currentBikepark);
+            initDefaultAddressForBikepark(currentBikepark.getContact());
+            initDefaulPhotoForBikepark(currentBikepark);
+
+        }
+
+        return currentBikepark;
+    }
+
+    @Override
+    public boolean checkUsernameExists(User user) {
+        return userRepository.findByUsername(user.getUsername()).isPresent();
+    }
+
+
+    @Override
+    public boolean checkEmailExists(User user) {
+        return userRepository.findByEmail(user.getEmail()).isPresent();
     }
 
     public void modificaPreferinte(Biker biker, BikePark bikePark){
