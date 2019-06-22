@@ -1,6 +1,7 @@
 package com.gabi.backend.bikeparkend.controller;
 
 import com.gabi.backend.bikeparkend.controller.requests.CreateCategorieConcurs;
+import com.gabi.backend.bikeparkend.controller.requests.CreateConcursBikepark;
 import com.gabi.backend.bikeparkend.controller.requests.CreateRezervareBikepark;
 import com.gabi.backend.bikeparkend.controller.requests.CreateTraseuBikepark;
 import com.gabi.backend.bikeparkend.exceptions.NotValidBikeparkException;
@@ -125,8 +126,16 @@ public class BikeParkController {
     }*/
 
     @PostMapping("/add/concurs")
-    public @ResponseBody ResponseEntity addConcurs(@RequestBody Concurs concurs){
-        return new ResponseEntity(userService.addConcurs(concurs), HttpStatus.OK);
+    public @ResponseBody ResponseEntity addConcurs(@RequestBody CreateConcursBikepark createConcursBikepark) throws NotValidBikeparkException{
+        Concurs concurs =
+                userService.createConcurs(
+                        createConcursBikepark.getBikePark(),
+                        createConcursBikepark.getConcurs()
+                );
+        if (concurs==null)
+            return new ResponseEntity(HttpStatus.CONFLICT);
+        return new ResponseEntity(concurs,HttpStatus.CREATED);
+        //return new ResponseEntity(userService.addConcurs(concurs), HttpStatus.OK);
     }
 
     @PostMapping("/add/bikepark")
@@ -172,10 +181,25 @@ public class BikeParkController {
         return new ResponseEntity(traseuList, HttpStatus.OK);
     }
 
+    @GetMapping("/concursByBikepark/{id}")
+    public ResponseEntity getConcursuriByBikepark(@PathVariable Long id) {
+        System.out.println("Vrea getConcursuriByBikepark id "+id);
+        List<Concurs> concursList = userService.findConcursuriByBikeparkId(id);
+        System.out.println("Cate sunt : " + concursList.size());
+        return new ResponseEntity(concursList, HttpStatus.OK);
+    }
+
     @DeleteMapping("/traseu/delete/{id}")
     public ResponseEntity deleteTraseu(@PathVariable Long id) {
         System.out.println("Sterge traseul : " + id);
         return new ResponseEntity(userService.deleteTraseu(id),HttpStatus.OK);
+    }
+
+    @DeleteMapping("/concurs/delete/{id}")
+    public ResponseEntity deleteConcurs(@PathVariable Long id) {
+        System.out.println("Vrea deleteConcurs id "+id);
+        System.out.println("Sterge concursul : " + id);
+        return new ResponseEntity(userService.deleteConcurs(id),HttpStatus.OK);
     }
 
     @PostMapping("/add/traseu")

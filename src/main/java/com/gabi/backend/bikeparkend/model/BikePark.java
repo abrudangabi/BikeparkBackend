@@ -438,6 +438,10 @@ public class BikePark implements Serializable {
         this.trasee.remove(traseu);
     }
 
+    public void removeConcurs(Concurs concurs){
+        this.concurs.remove(concurs);
+    }
+
     public String getDescriere() {
         return descriere;
     }

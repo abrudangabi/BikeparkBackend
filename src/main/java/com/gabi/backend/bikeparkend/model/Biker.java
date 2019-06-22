@@ -108,6 +108,14 @@ public class Biker implements Serializable {
         contact.setBiker(this);
     }
 
+    public void removeRezervareBikepark(RezervareBikePark rezervareBikePark){
+        this.rezervareBikeParks.remove(rezervareBikePark);
+    }
+
+    public void removeRezervareConcurs(RezervareConcurs rezervareConcurs){
+        this.rezervareConcurs.remove(rezervareConcurs);
+    }
+
     /*public Locatie getLocatie() {
         return locatie;
     }

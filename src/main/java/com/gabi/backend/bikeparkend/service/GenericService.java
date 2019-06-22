@@ -1,5 +1,7 @@
 package com.gabi.backend.bikeparkend.service;
 
+import com.gabi.backend.bikeparkend.controller.requests.BikeparkReservationRequest;
+import com.gabi.backend.bikeparkend.controller.requests.ConcursReservationRequest;
 import com.gabi.backend.bikeparkend.exceptions.NotValidBikeparkException;
 import com.gabi.backend.bikeparkend.exceptions.NotValidBikerException;
 import com.gabi.backend.bikeparkend.model.*;
@@ -28,7 +30,17 @@ public interface GenericService {
 
     List<Photo> getAllPhotos();
 
+    List<BikeparkReservationRequest> getAllRezervariBikeparkForBiker();
+
+    List<RezervareBikePark> getAllRezervariBikeparkByBiker(Long id) throws NotValidBikerException;
+
+    List<ConcursReservationRequest> getAllRezervariConcursForBiker();
+
+    List<RezervareConcurs> getAllRezervariConcursByBiker(Long id) throws NotValidBikerException;
+
     BikePark getBikeparkById(Long id) throws NotValidBikeparkException;
+
+    Biker getBikerById(Long id) throws NotValidBikerException;
 
     Biker updateApplicant(Long id, Biker applicant);
 
@@ -58,9 +70,17 @@ public interface GenericService {
 
     Traseu deleteTraseu(Long id);
 
+    Concurs deleteConcurs(Long id);
+
+    RezervareBikePark deleteRezervareBikepark(Long id);
+
+    RezervareConcurs deleteRezervareConcurs(Long id);
+
     RezervareConcurs createRezervareConcurs(Concurs concurs, RezervareConcurs rezervareConcurs);
 
     Categorie createCategorie(Concurs concurs, Categorie categorie);
+
+    Concurs createConcurs(BikePark bikePark, Concurs concurs) throws NotValidBikeparkException;
 
     Traseu createTraseu(BikePark bikePark, Traseu traseu) throws NotValidBikeparkException;
 
@@ -72,23 +92,11 @@ public interface GenericService {
 
     List<Traseu> findTraseeByBikeparkId(Long id);
 
+    List<Concurs> findConcursuriByBikeparkId(Long id);
+
     Biker findBikerById(Long id) throws NotValidBikerException;
-
-    void resetarePreferinte();
-
-    void calculateSimilarities();
-
-    void curataSimilaritati();
-
-    void curataPreferinte();
-
-    void citestePreferinte();
-
-    void saveInPreferinte();
 
     List<BikePark> recomanda(Biker biker);
 
     List<BikePark> recommend(Biker user, int howMany);
-
-    void verifBD(Biker biker);
 }
