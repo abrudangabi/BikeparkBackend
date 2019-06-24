@@ -8,6 +8,8 @@ import com.gabi.backend.bikeparkend.model.User;
 import com.gabi.backend.bikeparkend.service.GenericService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +31,7 @@ public class UserController {
         //User user = new User();
         return new ResponseEntity(user, HttpStatus.OK);
     }
-    //@PreAuthorize("hasAuthority('COMPANY')")
+    @PreAuthorize("hasAuthority('COMPANY')")
     @GetMapping("/user/bikepark/{id}")
     public ResponseEntity getAuthenticatedBikepark(@PathVariable Long id) throws NotValidBikeparkException {
         //TODO

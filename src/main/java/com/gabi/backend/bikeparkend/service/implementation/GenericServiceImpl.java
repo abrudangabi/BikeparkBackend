@@ -35,6 +35,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import com.gabi.backend.bikeparkend.config.SecurityConfig;
 
 import javax.annotation.PostConstruct;
 import javax.sql.ConnectionPoolDataSource;
@@ -109,6 +112,7 @@ public class GenericServiceImpl implements GenericService {
     private void loadData() {
         initRoles();
         initDatabase();
+        //initParole();
     }
 
     private void initRoles(){
@@ -117,6 +121,34 @@ public class GenericServiceImpl implements GenericService {
 
     private void initDatabase(){
 
+    }
+
+    private void initParole(){
+        List<User> users = userRepository.findAll();
+
+        for(User u : users){
+            if(u.getId()>=(long)1 && u.getId()<=100) {
+                u.setActive(true);
+                userRepository.save(u);
+            }
+        }
+
+        /*for(User u : users){
+            if(u.getId()>=(long)138 && u.getId()<=300){
+                String parolaCodata = u.getUsername();
+                u.setPassword(SecurityConfig.passwordEncoder().encode(parolaCodata));
+                userRepository.save(u);
+            }
+        }*/
+
+        /*for(User u : users){
+            Optional<User> applicantOptional = userRepository.findById(u.getId());
+            User user = applicantOptional.get();
+            String parolaCodata = u.getUsername();
+            user.setPassword(SecurityConfig.passwordEncoder().encode(parolaCodata));
+        }*/
+
+        System.out.println("A schimbat parolele");
     }
 
     private void initDefaultContactForBiker(Biker biker) {
@@ -323,9 +355,9 @@ public class GenericServiceImpl implements GenericService {
     @Override
     public User getAuthenticatedUser() {
         //TODO MARE DE TOT
-        //Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        //String string = (String) authentication.getPrincipal();
-        String string = "";
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String string = (String) authentication.getPrincipal();
+        //String string = "";
         User user = null;
         Optional<User> userUsername = userRepository.findByUsername(string);
         if (!userUsername.isPresent()) {

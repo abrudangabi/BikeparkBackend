@@ -2,6 +2,7 @@ package com.gabi.backend.bikeparkend.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,10 +19,15 @@ public class User implements Serializable {
     @Column (name = "user_id")
     private long id;
 
+    @Column (unique = true, length = 128)
     private String username;
 
+    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @Column(name = "password")
     private String password;
 
+    @Column (unique = true, length = 128)
     private String email;
 
     private Boolean active;
