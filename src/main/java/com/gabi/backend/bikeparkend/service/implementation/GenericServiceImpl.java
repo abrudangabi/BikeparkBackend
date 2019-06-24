@@ -113,6 +113,7 @@ public class GenericServiceImpl implements GenericService {
         initRoles();
         initDatabase();
         //initParole();
+        generare();
     }
 
     private void initRoles(){
@@ -120,6 +121,193 @@ public class GenericServiceImpl implements GenericService {
     }
 
     private void initDatabase(){
+
+    }
+
+    public void generare(){
+        //Generare Bikeri, Useri, Contact, Roluri, Disciplina, Locatie, Foto
+
+        int nr = 1;
+        for (int i = 1; i <= 1509; i++) {
+            //TODO 1508 useri de adaugat
+
+            //TODO BIKER
+            int nrUser = i;
+            long nrBiker = i;
+            int idUser = i;
+            long userSmecher = (long) idUser;
+            //User
+            User user = new User();
+            user.setId(idUser);
+            user.setActive(true);
+            user.setUsername("user" + nrUser);
+            //String parolaCodata = u.getUsername();
+            user.setPassword(SecurityConfig.passwordEncoder().encode("user" + nrUser));
+            //user.setPassword("pass" + nrUser);
+            user.setEmail("user" + nrUser + "@yahoo.com");
+
+            //TODO ID PT BIKER
+            Long idBiker = (long) nrBiker;
+
+            //Biker
+            Biker biker = new Biker();
+            biker.setId(idBiker);
+            LocalDate localDate1 = LocalDate.of(2016, Month.FEBRUARY, 3);
+            LocalDate localDate2 = LocalDate.of(1997, Month.MAY, 15);
+            biker.setNume("biker" + nrUser);
+            biker.setPrenume("biker" + nrUser);
+            biker.setBicicleta("Canyon");
+            biker.setAniExperienta(2);
+            biker.setDataNasterii(localDate2);
+            biker.setMembruData(localDate1);
+            biker.setDisciplinaFavorita(Disciplina.ENDURO);
+
+            biker.setUser(user);
+            user.setBiker(biker);
+
+            //Role
+            Role role = new Role();
+            role.setRoleId(2);
+            role.setRoleString(RoleString.BIKER);
+            user.addRole(role);
+
+            //Contact
+            Contact contact = new Contact();
+            contact.setId((long) idUser);
+            contact.setPhoneNumber("0770123456");
+            contact.setFacebookLink("https://www.facebook.com/dannyhartfanpage/");
+
+            contact.setBiker(biker);
+            biker.setContact(contact);
+
+            //Locatie
+            Locatie locatie = new Locatie();
+            locatie.setId(idUser);
+            locatie.setTara("Romania");
+            locatie.setProvincie("Cluj");
+            locatie.setLocalitate("Clij-Napoca");
+            locatie.setLatitude(45.0);
+            locatie.setLongitude(25.0);
+            locatie.setCodPostal("400000");
+            locatie.setStrada("Constantin Brancusi");
+            locatie.setNumber("120");
+
+            locatie.setContact(contact);
+            contact.setLocatie(locatie);
+
+            //Photo
+            Photo photo = new Photo();
+            Long idPhoto = (long) idUser;
+            photo.setId(idPhoto);
+            photo.setUrl("https://www.ucc-sportevent.com/wp-content/uploads/photo-Mega-Dimanche-Cyril-Charpin-9-1080x675.jpg");
+
+
+            photo.setContact(contact);
+            contact.setPhoto(photo);
+
+            //Repository
+            userRepository.save(user);
+            bikerRepository.save(biker);
+            roleRepository.save(role);
+            contactRepository.save(contact);
+            locatieRepository.save(locatie);
+            photoRepository.save(photo);
+        }
+
+
+        //Generare Bikepark, Useri, Contact, Roluri, Disciplina, Locatie, Dificultate, Foto, 1 Traseu
+
+
+        for (int i = 1; i <= 2066; i++) {
+            //TODO
+
+            //TODO BIKEPARK
+
+            int nrUser = 1509 + i;
+            int idUser = 1509 + i;
+            long nrBikepark = i;
+            //User
+            User user = new User();
+            user.setId(idUser);
+            user.setActive(true);
+            user.setUsername("user" + nrUser);
+            user.setPassword(SecurityConfig.passwordEncoder().encode("user" + nrUser));
+            user.setEmail("user" + nrUser + "@yahoo.com");
+
+            //TODO ID PT BIKEPARK
+            Long idBikepark = (long) nrBikepark;
+            //Bikepark
+            BikePark bikePark = new BikePark();
+            bikePark.setDenumire("Bikepark " + nrUser);
+            bikePark.setNrLocuri(100);
+            bikePark.setDescriere("Bikepark care e ideal relaxarii cu bicicleta");
+            bikePark.setId(idBikepark);
+            bikePark.setTelescaun(true);
+
+            bikePark.setUser(user);
+            user.setBikePark(bikePark);
+
+            //Role
+            Role role = new Role();
+            role.setRoleId(1);
+            role.setRoleString(RoleString.BIKEPARK);
+            user.addRole(role);
+
+            //Contact
+            Contact contact = new Contact();
+            contact.setId((long) idUser);
+            contact.setPhoneNumber("0770123456");
+            contact.setFacebookLink("https://www.facebook.com/WhistlerBikePark/");
+            contact.setWebsite("https://www.whistlerblackcomb.com/plan-your-trip/lift-access/bike-park-passes.aspx");
+
+            contact.setBikePark(bikePark);
+            bikePark.setContact(contact);
+
+            //Locatie
+            Locatie locatie = new Locatie();
+            locatie.setId(idUser);
+            locatie.setTara("Canada");
+            locatie.setProvincie("British Columbia");
+            locatie.setLocalitate("Whistler");
+            locatie.setLatitude(50.0);
+            locatie.setLongitude(123.0);
+            locatie.setCodPostal("400000");
+            locatie.setStrada("Mountain Square");
+            locatie.setNumber("4282 ");
+
+            locatie.setContact(contact);
+            contact.setLocatie(locatie);
+
+            //Photo
+            Photo photo = new Photo();
+            Long idPhoto = (long) idUser;
+            photo.setId(idPhoto);
+            photo.setUrl("https://lh5.googleusercontent.com/p/AF1QipPNXft_3I65CozWF08kgIsKJCERDLdpqQopDlYg=w408-h306-k-no");
+
+            photo.setContact(contact);
+            contact.setPhoto(photo);
+
+            //Traseu
+            long idTraseu = idBikepark + 2;
+            Traseu traseu = new Traseu();
+            traseu.setId(idTraseu);
+            traseu.setLungime((long) 1200);
+            traseu.setDenumire("Flow Line");
+            traseu.setTipTraseu(Disciplina.ENDURO);
+            traseu.setDificultate(Dificultate.mediu);
+
+            bikePark.addTraseu(traseu);
+
+            //Repository
+            userRepository.save(user);
+            bikeParkRepository.save(bikePark);
+            roleRepository.save(role);
+            contactRepository.save(contact);
+            locatieRepository.save(locatie);
+            photoRepository.save(photo);
+            traseuRepository.save(traseu);
+        }
+
 
     }
 

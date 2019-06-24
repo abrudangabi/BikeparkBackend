@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="954cdad7-07fe-48be-9616-30e163cd7273" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/AdditionalWebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/AuthorizationServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/ResourceServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/AppUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/UserDetailsEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/BikeParkBackendApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/BikeParkBackendApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/BikeParkBackendApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/BikeParkBackendApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -72,15 +57,44 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4896">
-              <caret line="355" column="22" selection-start-line="355" selection-start-column="16" selection-end-line="355" selection-end-column="22" />
+            <state relative-caret-position="50">
+              <caret line="115" column="19" selection-start-line="115" selection-start-column="19" selection-end-line="115" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#30078#30079#0" expanded="true" />
-                <element signature="e#30156#30157#0" expanded="true" />
+                <element signature="e#14674#14675#0" expanded="true" />
+                <element signature="e#14722#14723#0" expanded="true" />
+                <element signature="e#14781#14782#0" expanded="true" />
+                <element signature="e#14831#14832#0" expanded="true" />
+                <element signature="e#14886#14887#0" expanded="true" />
+                <element signature="e#14935#14936#0" expanded="true" />
+                <element signature="e#15012#15013#0" expanded="true" />
+                <element signature="e#15072#15073#0" expanded="true" />
+                <element signature="e#15133#15134#0" expanded="true" />
+                <element signature="e#15185#15186#0" expanded="true" />
+                <element signature="e#15242#15243#0" expanded="true" />
+                <element signature="e#15292#15293#0" expanded="true" />
+                <element signature="e#15367#15368#0" expanded="true" />
+                <element signature="e#15426#15427#0" expanded="true" />
+                <element signature="e#15484#15485#0" expanded="true" />
+                <element signature="e#15534#15535#0" expanded="true" />
+                <element signature="e#15588#15589#0" expanded="true" />
+                <element signature="e#15636#15637#0" expanded="true" />
+                <element signature="e#24331#24332#0" expanded="true" />
+                <element signature="e#24387#24388#0" expanded="true" />
+                <element signature="e#24450#24451#0" expanded="true" />
+                <element signature="e#24504#24505#0" expanded="true" />
+                <element signature="e#24575#24576#0" expanded="true" />
+                <element signature="e#24633#24634#0" expanded="true" />
+                <element signature="e#24692#24693#0" expanded="true" />
+                <element signature="e#24744#24745#0" expanded="true" />
+                <element signature="e#24795#24796#0" expanded="true" />
+                <element signature="e#24843#24844#0" expanded="true" />
+                <element signature="e#25863#25864#0" expanded="true" />
+                <element signature="e#25921#25922#0" expanded="true" />
+                <element signature="e#36725#36726#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,15 +108,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -239,10 +244,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/CloudinaryConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/UserDetailsEntity.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/AppUserDetailsService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -625,12 +630,12 @@
       <workItem from="1561323284292" duration="1622000" />
       <workItem from="1561348774014" duration="1003000" />
       <workItem from="1561355395387" duration="1524000" />
-      <workItem from="1561379654477" duration="2429000" />
+      <workItem from="1561379654477" duration="5769000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="333997000" />
+    <option name="totallyTimeSpent" value="337337000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -775,7 +780,6 @@
       </provider>
     </entry>
     <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/concurs" />
-    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/bikepark" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/requests/ConcursReservationRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1055,16 +1059,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/CodGunoi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/model/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -1115,18 +1109,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4896">
-          <caret line="355" column="22" selection-start-line="355" selection-start-column="16" selection-end-line="355" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#30078#30079#0" expanded="true" />
-            <element signature="e#30156#30157#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/config/CorsFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1161,6 +1143,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/CodGunoi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="736" column="5" lean-forward="true" selection-start-line="736" selection-start-column="5" selection-end-line="736" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1171,10 +1170,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+    <entry file="das://eaf737c2-3978-4dcb-9889-5653b1f18c68/schema/bikepark/table/bikepark">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gabi/backend/bikeparkend/service/implementation/GenericServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="50">
+          <caret line="115" column="19" selection-start-line="115" selection-start-column="19" selection-end-line="115" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#14674#14675#0" expanded="true" />
+            <element signature="e#14722#14723#0" expanded="true" />
+            <element signature="e#14781#14782#0" expanded="true" />
+            <element signature="e#14831#14832#0" expanded="true" />
+            <element signature="e#14886#14887#0" expanded="true" />
+            <element signature="e#14935#14936#0" expanded="true" />
+            <element signature="e#15012#15013#0" expanded="true" />
+            <element signature="e#15072#15073#0" expanded="true" />
+            <element signature="e#15133#15134#0" expanded="true" />
+            <element signature="e#15185#15186#0" expanded="true" />
+            <element signature="e#15242#15243#0" expanded="true" />
+            <element signature="e#15292#15293#0" expanded="true" />
+            <element signature="e#15367#15368#0" expanded="true" />
+            <element signature="e#15426#15427#0" expanded="true" />
+            <element signature="e#15484#15485#0" expanded="true" />
+            <element signature="e#15534#15535#0" expanded="true" />
+            <element signature="e#15588#15589#0" expanded="true" />
+            <element signature="e#15636#15637#0" expanded="true" />
+            <element signature="e#24331#24332#0" expanded="true" />
+            <element signature="e#24387#24388#0" expanded="true" />
+            <element signature="e#24450#24451#0" expanded="true" />
+            <element signature="e#24504#24505#0" expanded="true" />
+            <element signature="e#24575#24576#0" expanded="true" />
+            <element signature="e#24633#24634#0" expanded="true" />
+            <element signature="e#24692#24693#0" expanded="true" />
+            <element signature="e#24744#24745#0" expanded="true" />
+            <element signature="e#24795#24796#0" expanded="true" />
+            <element signature="e#24843#24844#0" expanded="true" />
+            <element signature="e#25863#25864#0" expanded="true" />
+            <element signature="e#25921#25922#0" expanded="true" />
+            <element signature="e#36725#36726#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
